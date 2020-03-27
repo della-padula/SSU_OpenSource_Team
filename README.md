@@ -16,5 +16,5 @@ release branch : checkout release version branch from master
 ## Inquirements
 Email : denny.k@kakaocorp.com
 
-## LISENCE
+## LICENSE
 MIT License
