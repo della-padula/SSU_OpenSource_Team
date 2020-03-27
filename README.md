@@ -1,4 +1,5 @@
 # SSU_OpenSource_Team
+2020-Spring Open Source Engaged Learning Lecture Project Repository  
 ## Participants
 Team Leader    : 오세환 (소프트웨어학부)  
 Team Member #1 : 이인후 (소프트웨어학부)  
