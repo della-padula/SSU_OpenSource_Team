@@ -8,12 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		B058B3CF242EE7A2009A4682 /* NoticeWorker.h in Headers */ = {isa = PBXBuildFile; fileRef = B058B3CD242EE7A2009A4682 /* NoticeWorker.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B058B3D6242EEA1B009A4682 /* NoticeWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = B058B3D5242EEA1B009A4682 /* NoticeWorker.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		B058B3CA242EE7A2009A4682 /* NoticeWorker.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = NoticeWorker.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B058B3CD242EE7A2009A4682 /* NoticeWorker.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NoticeWorker.h; sourceTree = "<group>"; };
 		B058B3CE242EE7A2009A4682 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B058B3D5242EEA1B009A4682 /* NoticeWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoticeWorker.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -48,6 +50,7 @@
 			children = (
 				B058B3CD242EE7A2009A4682 /* NoticeWorker.h */,
 				B058B3CE242EE7A2009A4682 /* Info.plist */,
+				B058B3D5242EEA1B009A4682 /* NoticeWorker.swift */,
 			);
 			path = NoticeWorker;
 			sourceTree = "<group>";
@@ -95,6 +98,7 @@
 				TargetAttributes = {
 					B058B3C9242EE7A2009A4682 = {
 						CreatedOnToolsVersion = 11.3.1;
+						LastSwiftMigration = 1130;
 					};
 				};
 			};
@@ -131,6 +135,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B058B3D6242EEA1B009A4682 /* NoticeWorker.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -260,6 +265,7 @@
 		B058B3D3242EE7A2009A4682 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = P6E4GUVUC9;
@@ -276,6 +282,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.denny.NoticeWorker;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -284,6 +291,7 @@
 		B058B3D4242EE7A2009A4682 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = P6E4GUVUC9;
