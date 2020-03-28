@@ -1,0 +1,2 @@
+rootProject.name='NoticeWroker'
+include ':app'
