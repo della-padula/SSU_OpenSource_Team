@@ -22,13 +22,7 @@ e.g) feature/login, feature/NoticeParse 등
 > **(GIt 명령어 숙지 필수)**
 
 질문 사항은 갠톡 주세요 (헷갈린다 싶으면 무조건 갠톡주세요)
-
-```mermaid
-sequenceDiagram
-feature/iOS_URL ->> develop: Pull Request
-develop-->>master: Force Merge (김태인)
-Note right of develop: master로의 머지 금지<br/>Denny.K가 직접 수행<br/>develop까지 PR<br/>모르는 것 질문!
-```
+![screenshot](./ImageDiagram.png)
 
 # Android와 iOS 프로젝트 운영
 
