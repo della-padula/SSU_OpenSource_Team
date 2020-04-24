@@ -13,7 +13,7 @@ iOS : Cocoapods
 Android: Gradle (Jitpack), Maven  
 
 ## Git Flow
-master - develop - feature/(name)  
+(iteration/(year)/(version) - develop - feature/(name)  
 release branch : checkout release version branch from master  
 
 ## How to pull request
