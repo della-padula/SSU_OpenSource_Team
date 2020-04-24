@@ -8,7 +8,11 @@
 
 import Foundation
 
-public class NoticeWorker {
-    
+public enum APIResponse {
+    case success
+    case failure
+}
+
+class NoticeWorker {
     
 }
