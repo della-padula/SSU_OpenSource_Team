@@ -10,7 +10,15 @@ import Foundation
 
 public typealias DeptCode = Int
 
-public class Organization {
+protocol OrganizationProtocol {
+    func getSchoolName() -> String?
+    
+    func getNoticeURL(dept code: DeptCode, page: Int, quantity: Int, completion: @escaping (Result<URL, URLGenerateError>) -> Void)
+    
+    func getDeptCount() -> Int?
+}
+
+public class Organization: OrganizationProtocol {
     var deptList: [Dept]?
     
     public init() { }
