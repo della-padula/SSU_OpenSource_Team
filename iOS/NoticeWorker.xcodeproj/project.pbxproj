@@ -56,15 +56,31 @@
 		B058B3CC242EE7A2009A4682 /* NoticeWorker */ = {
 			isa = PBXGroup;
 			children = (
+				B0D03B402453243B00E3EF46 /* Base */,
+				B0D03B3F2453243000E3EF46 /* Soongsil */,
 				B058B3CD242EE7A2009A4682 /* NoticeWorker.h */,
 				B058B3CE242EE7A2009A4682 /* Info.plist */,
+			);
+			path = NoticeWorker;
+			sourceTree = "<group>";
+		};
+		B0D03B3F2453243000E3EF46 /* Soongsil */ = {
+			isa = PBXGroup;
+			children = (
+				B0D03B3924531BE800E3EF46 /* Soongsil.swift */,
+			);
+			path = Soongsil;
+			sourceTree = "<group>";
+		};
+		B0D03B402453243B00E3EF46 /* Base */ = {
+			isa = PBXGroup;
+			children = (
 				B058B3D5242EEA1B009A4682 /* NoticeWorker.swift */,
 				B0D03B372453137000E3EF46 /* NURL.swift */,
-				B0D03B3924531BE800E3EF46 /* Soongsil.swift */,
 				B0D03B3B24531FBD00E3EF46 /* BaseModule.swift */,
 				B0D03B3D24531FD800E3EF46 /* ResultCode.swift */,
 			);
-			path = NoticeWorker;
+			path = Base;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

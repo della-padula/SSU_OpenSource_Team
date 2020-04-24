@@ -8,16 +8,26 @@
 
 import Foundation
 
-public protocol Organization {
-    var deptList: [Dept] { get set }
-    
-    func getSchoolName() -> String
+public typealias DeptCode = Int
+
+protocol OrganizationProtocol {
+    func getSchoolName() -> String?
     
     func getNoticeURL(dept code: DeptCode, page: Int, quantity: Int, completion: @escaping (Result<URL, URLGenerateError>) -> Void)
     
-    func getDeptCount() -> Int
+    func getDeptCount() -> Int?
+}
+
+public class Organization: OrganizationProtocol {
+    var deptList: [Dept]?
     
+    public init() { }
     
+    func getSchoolName() -> String? { return nil }
+    
+    func getNoticeURL(dept code: DeptCode, page: Int, quantity: Int, completion: @escaping (Result<URL, URLGenerateError>) -> Void) { }
+    
+    func getDeptCount() -> Int? { return nil }
 }
 
 public protocol Dept {
@@ -31,4 +41,9 @@ public struct Notice {
     var author    : String
     var date      : Date
     var viewCount : Int
+}
+
+public enum OrganizationCode: Int {
+    case Soongsil
+    case Chungang
 }
