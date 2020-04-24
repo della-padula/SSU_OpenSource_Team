@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		B058B3CF242EE7A2009A4682 /* NoticeWorker.h in Headers */ = {isa = PBXBuildFile; fileRef = B058B3CD242EE7A2009A4682 /* NoticeWorker.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B058B3D6242EEA1B009A4682 /* NoticeWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = B058B3D5242EEA1B009A4682 /* NoticeWorker.swift */; };
+		B0D03B382453137000E3EF46 /* NURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0D03B372453137000E3EF46 /* NURL.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -16,6 +17,7 @@
 		B058B3CD242EE7A2009A4682 /* NoticeWorker.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NoticeWorker.h; sourceTree = "<group>"; };
 		B058B3CE242EE7A2009A4682 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B058B3D5242EEA1B009A4682 /* NoticeWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoticeWorker.swift; sourceTree = "<group>"; };
+		B0D03B372453137000E3EF46 /* NURL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NURL.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,6 +53,7 @@
 				B058B3CD242EE7A2009A4682 /* NoticeWorker.h */,
 				B058B3CE242EE7A2009A4682 /* Info.plist */,
 				B058B3D5242EEA1B009A4682 /* NoticeWorker.swift */,
+				B0D03B372453137000E3EF46 /* NURL.swift */,
 			);
 			path = NoticeWorker;
 			sourceTree = "<group>";
@@ -135,6 +138,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B0D03B382453137000E3EF46 /* NURL.swift in Sources */,
 				B058B3D6242EEA1B009A4682 /* NoticeWorker.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -193,7 +197,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -250,7 +254,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -274,6 +278,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = NoticeWorker/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -300,6 +305,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = NoticeWorker/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
