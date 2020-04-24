@@ -10,6 +10,9 @@
 		B058B3CF242EE7A2009A4682 /* NoticeWorker.h in Headers */ = {isa = PBXBuildFile; fileRef = B058B3CD242EE7A2009A4682 /* NoticeWorker.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B058B3D6242EEA1B009A4682 /* NoticeWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = B058B3D5242EEA1B009A4682 /* NoticeWorker.swift */; };
 		B0D03B382453137000E3EF46 /* NURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0D03B372453137000E3EF46 /* NURL.swift */; };
+		B0D03B3A24531BE800E3EF46 /* Soongsil.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0D03B3924531BE800E3EF46 /* Soongsil.swift */; };
+		B0D03B3C24531FBD00E3EF46 /* BaseModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0D03B3B24531FBD00E3EF46 /* BaseModule.swift */; };
+		B0D03B3E24531FD800E3EF46 /* ResultCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0D03B3D24531FD800E3EF46 /* ResultCode.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -18,6 +21,9 @@
 		B058B3CE242EE7A2009A4682 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B058B3D5242EEA1B009A4682 /* NoticeWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoticeWorker.swift; sourceTree = "<group>"; };
 		B0D03B372453137000E3EF46 /* NURL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NURL.swift; sourceTree = "<group>"; };
+		B0D03B3924531BE800E3EF46 /* Soongsil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Soongsil.swift; sourceTree = "<group>"; };
+		B0D03B3B24531FBD00E3EF46 /* BaseModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseModule.swift; sourceTree = "<group>"; };
+		B0D03B3D24531FD800E3EF46 /* ResultCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultCode.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +60,9 @@
 				B058B3CE242EE7A2009A4682 /* Info.plist */,
 				B058B3D5242EEA1B009A4682 /* NoticeWorker.swift */,
 				B0D03B372453137000E3EF46 /* NURL.swift */,
+				B0D03B3924531BE800E3EF46 /* Soongsil.swift */,
+				B0D03B3B24531FBD00E3EF46 /* BaseModule.swift */,
+				B0D03B3D24531FD800E3EF46 /* ResultCode.swift */,
 			);
 			path = NoticeWorker;
 			sourceTree = "<group>";
@@ -138,8 +147,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B0D03B3C24531FBD00E3EF46 /* BaseModule.swift in Sources */,
 				B0D03B382453137000E3EF46 /* NURL.swift in Sources */,
+				B0D03B3A24531BE800E3EF46 /* Soongsil.swift in Sources */,
 				B058B3D6242EEA1B009A4682 /* NoticeWorker.swift in Sources */,
+				B0D03B3E24531FD800E3EF46 /* ResultCode.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
