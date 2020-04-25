@@ -18,8 +18,10 @@ release branch : checkout release version branch from master
 
 ## How to pull request
 1) From feature to develop.  
-2) From develop to master.  
-
+2) From develop to iteration branch. (release)  
+  - iOS : iteration/ios/2020/(version)  
+  - AOS : iteration/aos/2020/(version)  
+  
 ## Inquirements
 Email : denny.k@kakaocorp.com
 
