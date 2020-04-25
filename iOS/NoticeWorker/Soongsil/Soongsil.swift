@@ -65,7 +65,7 @@ public class NW_Soongsil: Organization {
         return "숭실대학교"
     }
     
-    override func getNoticeURL(dept name: DeptName, page: Int, quantity: Int, completion: @escaping (Result<URL, URLGenerateError>) -> Void) {
+    override func getNoticeURL(dept name: DeptName, page: Int, completion: @escaping (Result<URL, URLGenerateError>) -> Void) {
         // MARK: TEMP
         if name == SoongsilDept.IT_Computer(page: nil, keyword: nil).deptName {
             completion(.failure(.invalid))
