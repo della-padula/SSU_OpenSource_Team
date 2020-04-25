@@ -11,6 +11,19 @@ import Foundation
 public class NW_Soongsil: Organization {
     public override init() { }
     
+    private func testFunc() {
+        var items = [Notice]()
+        let noticeProperty: [NoticeItem] = [.date(value: "2020-04-26"),
+                                            .title(value: "Test Title"),
+                                            .isActive(value: false),
+                                            .url(value: "https://www.google.com"),
+                                            .author(value: "TestAuthor"),
+                                            .custom(key: "viewCount", value: 100)]
+        
+        let item = Notice(property: noticeProperty)
+        items.append(item)
+    }
+    
     override func getSchoolName() -> String? {
         return "숭실대학교"
     }
@@ -26,12 +39,4 @@ public class NW_Soongsil: Organization {
     override func getDeptCount() -> Int? {
         return super.deptList?.count
     }
-}
-
-public enum SoongsilDeptCode: Int {
-    case itComputer
-    case itMedia
-    case itElectric
-    case itSoftware
-    case itSmart
 }

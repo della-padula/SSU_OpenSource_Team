@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B004E0252453DCA500C670FD /* SoongsilConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = B004E0242453DCA500C670FD /* SoongsilConstant.swift */; };
+		B004E0272453DCBF00C670FD /* SoongsilParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = B004E0262453DCBF00C670FD /* SoongsilParser.swift */; };
 		B058B3CF242EE7A2009A4682 /* NoticeWorker.h in Headers */ = {isa = PBXBuildFile; fileRef = B058B3CD242EE7A2009A4682 /* NoticeWorker.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B058B3D6242EEA1B009A4682 /* NoticeWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = B058B3D5242EEA1B009A4682 /* NoticeWorker.swift */; };
 		B0D03B382453137000E3EF46 /* NURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0D03B372453137000E3EF46 /* NURL.swift */; };
@@ -16,6 +18,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		B004E0242453DCA500C670FD /* SoongsilConstant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoongsilConstant.swift; sourceTree = "<group>"; };
+		B004E0262453DCBF00C670FD /* SoongsilParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoongsilParser.swift; sourceTree = "<group>"; };
 		B058B3CA242EE7A2009A4682 /* NoticeWorker.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = NoticeWorker.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B058B3CD242EE7A2009A4682 /* NoticeWorker.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NoticeWorker.h; sourceTree = "<group>"; };
 		B058B3CE242EE7A2009A4682 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -68,6 +72,8 @@
 			isa = PBXGroup;
 			children = (
 				B0D03B3924531BE800E3EF46 /* Soongsil.swift */,
+				B004E0242453DCA500C670FD /* SoongsilConstant.swift */,
+				B004E0262453DCBF00C670FD /* SoongsilParser.swift */,
 			);
 			path = Soongsil;
 			sourceTree = "<group>";
@@ -164,7 +170,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				B0D03B3C24531FBD00E3EF46 /* BaseModule.swift in Sources */,
+				B004E0252453DCA500C670FD /* SoongsilConstant.swift in Sources */,
 				B0D03B382453137000E3EF46 /* NURL.swift in Sources */,
+				B004E0272453DCBF00C670FD /* SoongsilParser.swift in Sources */,
 				B0D03B3A24531BE800E3EF46 /* Soongsil.swift in Sources */,
 				B058B3D6242EEA1B009A4682 /* NoticeWorker.swift in Sources */,
 				B0D03B3E24531FD800E3EF46 /* ResultCode.swift in Sources */,
