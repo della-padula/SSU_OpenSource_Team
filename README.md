@@ -14,7 +14,7 @@ Android: Gradle (Jitpack), Maven
 
 ## Git Flow
 (iteration/(year)/(version) - develop - feature/(name)  
-release branch : checkout release version branch from master  
+iteration branch : checkout iteration version branch from develop  
 
 ## How to pull request
 1) From feature to develop.  
