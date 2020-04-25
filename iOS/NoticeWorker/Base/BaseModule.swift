@@ -26,6 +26,8 @@ protocol OrganizationProtocol {
     func getDeptCount(collegeName: String) -> Int?
     
     func setOrganizationDept()
+    
+    func generateCollegeList() -> [CollegeName]?
 }
 
 protocol OrganizationParserProtocol {
@@ -38,6 +40,8 @@ protocol OrganizationParserProtocol {
 }
 
 public class Organization: OrganizationProtocol {
+    var collegeCodeList: [CollegeName]?
+    
     var collegeList: [College]?
     
     public var mappingTable: [CollegeDeptMapper]?
@@ -50,6 +54,8 @@ public class Organization: OrganizationProtocol {
     
     func getSchoolName() -> String? { return nil }
     
+    func generateCollegeList() -> [CollegeName]? { return nil }
+    
     func getNoticeURL(dept name: DeptName, page: Int, quantity: Int, completion: @escaping (Result<URL, URLGenerateError>) -> Void) { }
     
     func getDeptCount(collegeName: String) -> Int? { return nil }
@@ -58,7 +64,22 @@ public class Organization: OrganizationProtocol {
     
     func getNoticeList(html: String) -> [Notice]? { return nil }
     
-    func setOrganizationDept() { }
+    func setOrganizationDept() {
+        collegeList = [College]()
+        
+        for collegeCode in self.collegeCodeList as! [CollegeName] {
+            var college = College()
+            college.collegeName = collegeCode
+            if let deptList = mappingTable?.filter({ $0.college == collegeCode }).first?.deptList {
+                var tempList = [DeptItem]()
+                for deptItem in deptList {
+                    tempList.append(deptItem)
+                }
+                college.deptList = tempList
+            }
+            collegeList?.append(college)
+        }
+    }
 }
 
 public protocol DeptItem {

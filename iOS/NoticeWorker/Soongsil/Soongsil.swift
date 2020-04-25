@@ -11,9 +11,19 @@ import Foundation
 public class NW_Soongsil: Organization {
     public override init() {
         super.init()
+        
+        self.collegeCodeList = generateCollegeList()
         self.mappingCollegeDept()
         self.setOrganizationDept()
         self.organizationCode = .Soongsil
+    }
+    
+    override func generateCollegeList() -> [CollegeName]? {
+        var collegeList = [CollegeName]()
+        for codeCase in SoongsilCollegeCode.allCases {
+            collegeList.append(codeCase.rawValue)
+        }
+        return collegeList
     }
     
     public func testFunc() -> [Notice] {
@@ -68,23 +78,23 @@ public class NW_Soongsil: Organization {
     }
     
     override func getDeptCount(collegeName: String) -> Int? {
-        return super.collegeList?.filter({ $0.collegeName == collegeName }).count
+        return super.collegeList?.filter({ $0.collegeName == collegeName }).first?.deptList?.count
     }
     
-    override func setOrganizationDept() {
-        collegeList = [College]()
-        
-        for collegeCode in SoongsilCollegeCode.allCases {
-            var college = College()
-            college.collegeName = collegeCode.rawValue
-            if let deptList = mappingTable?.filter({ $0.college == collegeCode.rawValue }).first?.deptList {
-                var tempList = [DeptItem]()
-                for deptItem in deptList {
-                    tempList.append(deptItem)
-                }
-                college.deptList = tempList
-            }
-            collegeList?.append(college)
-        }
-    }
+//    override func setOrganizationDept() {
+//        collegeList = [College]()
+//        
+//        for collegeCode in self.collegeCodeList as! [CollegeName] {
+//            var college = College()
+//            college.collegeName = collegeCode
+//            if let deptList = mappingTable?.filter({ $0.college == collegeCode }).first?.deptList {
+//                var tempList = [DeptItem]()
+//                for deptItem in deptList {
+//                    tempList.append(deptItem)
+//                }
+//                college.deptList = tempList
+//            }
+//            collegeList?.append(college)
+//        }
+//    }
 }
