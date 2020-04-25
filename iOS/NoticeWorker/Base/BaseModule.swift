@@ -8,13 +8,17 @@
 
 import Foundation
 
-public typealias DeptCode = Int
-public typealias CollegeCode = Int
+public typealias DeptName = String
+public typealias CollegeName = String
 
 protocol OrganizationProtocol {
+    var organizationCode: OrganizationCode? { get set }
+    
     func getSchoolName() -> String?
     
-    func getNoticeURL(dept code: DeptCode, page: Int, quantity: Int, completion: @escaping (Result<URL, URLGenerateError>) -> Void)
+    func getNoticeURL(dept name: DeptName, page: Int, quantity: Int, completion: @escaping (Result<URL, URLGenerateError>) -> Void)
+    
+    func getCollegeCount() -> Int?
     
     func getDeptCount(collegeName: String) -> Int?
     
@@ -22,7 +26,6 @@ protocol OrganizationProtocol {
 }
 
 protocol OrganizationParserProtocol {
-    var organizationCode: OrganizationCode?
     
     func getNoticeList(completion: @escaping (Result<[Notice], HTMLParseError>) -> Void)
     
@@ -34,15 +37,19 @@ protocol OrganizationParserProtocol {
 public class Organization: OrganizationProtocol {
     var collegeList: [College]?
     
+    public var mappingTable: [CollegeDeptMapper]?
+    
     var organizationCode: OrganizationCode?
     
     public init() { }
     
     func getSchoolName() -> String? { return nil }
     
-    func getNoticeURL(dept code: DeptCode, page: Int, quantity: Int, completion: @escaping (Result<URL, URLGenerateError>) -> Void) { }
+    func getNoticeURL(dept name: DeptName, page: Int, quantity: Int, completion: @escaping (Result<URL, URLGenerateError>) -> Void) { }
     
     func getDeptCount(collegeName: String) -> Int? { return nil }
+    
+    func getCollegeCount() -> Int? { return nil }
     
     func getNoticeList(html: String) -> [Notice]? { return nil }
     

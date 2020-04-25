@@ -9,7 +9,6 @@
 import Foundation
 
 public class SoongsilParser: OrganizationParserProtocol {
-    
     func getNoticeList(completion: @escaping (Result<[Notice], HTMLParseError>) -> Void) {
         completion(.failure(.emptyContent))
     }
