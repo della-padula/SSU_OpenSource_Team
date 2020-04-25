@@ -63,6 +63,10 @@ public class NW_Soongsil: Organization {
         completion(.failure(.emptyKeyword))
     }
     
+    override func getDeptList(collegeName: CollegeName) -> [Dept]? {
+        return collegeList?.filter({ $0.collegeName == collegeName }).first?.deptList
+    }
+    
     override func getDeptCount(collegeName: String) -> Int? {
         return super.collegeList?.filter({ $0.collegeName == collegeName }).count
     }
@@ -71,13 +75,15 @@ public class NW_Soongsil: Organization {
         for collegeCode in SoongsilCollegeCode.allCases {
             var college = College()
             college.collegeName = collegeCode.rawValue
-            
-            let count = getDeptCount(collegeName: college.collegeName ?? "") ?? 0
-            for deptIndex in 0..<count {
-                let dept: Dept = Dept(deptName: "테스트학과\(deptIndex)", urlString: "https://www.google.com")
-                college.deptList?.append(dept)
+            print("College Name : \(collegeCode.rawValue)")
+            if let deptList = mappingTable?.filter({ $0.college == collegeCode.rawValue }).first?.deptList {
+                for deptName in deptList {
+                    let deptItem: Dept = Dept(deptName: deptName, urlString: "https://www.google.com")
+                    college.deptList?.append(deptItem)
+                }
             }
             collegeList?.append(college)
         }
+        print("CollegeList : \(collegeList?.count ?? 0)")
     }
 }

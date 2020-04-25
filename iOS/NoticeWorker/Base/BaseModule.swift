@@ -10,11 +10,14 @@ import Foundation
 
 public typealias DeptName = String
 public typealias CollegeName = String
+public typealias URLName = String
 
 protocol OrganizationProtocol {
     var organizationCode: OrganizationCode? { get set }
     
     func getSchoolName() -> String?
+    
+    func getDeptList(collegeName: CollegeName) -> [Dept]?
     
     func getNoticeURL(dept name: DeptName, page: Int, quantity: Int, completion: @escaping (Result<URL, URLGenerateError>) -> Void)
     
@@ -43,6 +46,8 @@ public class Organization: OrganizationProtocol {
     
     public init() { }
     
+    func getDeptList(collegeName: CollegeName) -> [Dept]? { return nil }
+    
     func getSchoolName() -> String? { return nil }
     
     func getNoticeURL(dept name: DeptName, page: Int, quantity: Int, completion: @escaping (Result<URL, URLGenerateError>) -> Void) { }
@@ -57,13 +62,13 @@ public class Organization: OrganizationProtocol {
 }
 
 public struct College {
-    var deptList: [Dept]?
-    var collegeName: String?
+    public var deptList: [Dept]?
+    public var collegeName: String?
 }
 
 public struct Dept {
-    var deptName: String
-    var urlString: String
+    public var deptName: String
+    public var urlString: String
 }
 
 // MARK: Notice
@@ -144,4 +149,9 @@ public struct Attachment {
 public enum OrganizationCode: Int {
     case Soongsil
     case Chungang
+}
+
+public struct CollegeDeptMapper {
+    var college: CollegeName
+    var deptList: [DeptName]
 }

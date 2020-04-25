@@ -10,6 +10,7 @@ import Foundation
 
 extension NW_Soongsil {
     func mappingCollegeDept() {
+        mappingTable = [CollegeDeptMapper]()
         mappingTable?.append(CollegeDeptMapper(college: SoongsilCollegeCode.it.rawValue,
                                                deptList: [SoongsilDeptCode.IT_Computer.rawValue,
                                                           SoongsilDeptCode.IT_Media.rawValue,

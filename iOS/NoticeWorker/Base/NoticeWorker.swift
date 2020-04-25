@@ -19,6 +19,10 @@ public class NoticeWorker {
         return organization?.getSchoolName()
     }
     
+    public func getDeptList(collegeName: CollegeName) -> [Dept]? {
+        return organization?.getDeptList(collegeName: collegeName)
+    }
+    
     public func getNoticeURL(dept name: DeptName, page: Int, quantity: Int, completion: @escaping (Result<URL, URLGenerateError>) -> Void) {
         self.organization?.getNoticeURL(dept: name, page: page, quantity: quantity, completion: completion)
     }
