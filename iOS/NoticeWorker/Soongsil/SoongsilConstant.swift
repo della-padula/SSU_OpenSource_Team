@@ -14,12 +14,6 @@ public enum SoongsilCollegeCode: CollegeName, CaseIterable {
     case school = "학교"
 }
 
-protocol DeptItem {
-    var urlString: String { get set }
-    
-    var deptName: String { get set }
-}
-
 public enum SoongsilDept: DeptItem {
     case IT_Computer(page: Int?, keyword: String?)
     case IT_Media(page: Int?, keyword: String?)
@@ -55,8 +49,6 @@ public enum SoongsilDept: DeptItem {
             return "http://lawyer.ssu.ac.kr/web/lawyer/27?p_p_id=EXT_BBS&p_p_lifecycle=0&p_p_state=normal&p_p_mode=view&p_p_col_id=column-1&p_p_col_count=1&_EXT_BBS_struts_action=%2Fext%2Fbbs%2Fview&_EXT_BBS_sCategory=&_EXT_BBS_sTitle=\(keyword ?? "")&_EXT_BBS_sWriter=&_EXT_BBS_sTag=&_EXT_BBS_sContent=&_EXT_BBS_sCategory2=&_EXT_BBS_sKeyType=title&_EXT_BBS_sKeyword=\(keyword ?? "")&_EXT_BBS_curPage=\(page ?? 0)"
         case .Soongsil(let page, let keyword):
             return "https://scatch.ssu.ac.kr/%EA%B3%B5%EC%A7%80%EC%82%AC%ED%95%AD/page/\(page ?? 0)/?f=all&keyword=\(keyword ?? "")"
-        default:
-            return "Unknown"
         }
     }
     
@@ -78,8 +70,6 @@ public enum SoongsilDept: DeptItem {
             return "국제법무학과"
         case .Soongsil:
             return "숭실대학교 공지"
-        default:
-            return "Unknown"
         }
     }
 }

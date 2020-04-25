@@ -19,7 +19,7 @@ public class NoticeWorker {
         return organization?.getSchoolName()
     }
     
-    public func getDeptList(collegeName: CollegeName) -> [Dept]? {
+    public func getDeptList(collegeName: CollegeName) -> [DeptItem]? {
         return organization?.getDeptList(collegeName: collegeName)
     }
     
@@ -35,7 +35,7 @@ public class NoticeWorker {
         return organization?.getCollegeCount()
     }
     
-    public func getDeptCount(collegeName: String) -> Int? {
+    public func getDeptCount(collegeName: CollegeName) -> Int? {
         return organization?.getDeptCount(collegeName: collegeName)
     }
 }

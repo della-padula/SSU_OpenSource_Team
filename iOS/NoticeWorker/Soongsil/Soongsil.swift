@@ -57,13 +57,13 @@ public class NW_Soongsil: Organization {
     
     override func getNoticeURL(dept name: DeptName, page: Int, quantity: Int, completion: @escaping (Result<URL, URLGenerateError>) -> Void) {
         // MARK: TEMP
-        if name == SoongsilDeptCode.IT_Computer.rawValue {
+        if name == SoongsilDept.IT_Computer(page: nil, keyword: nil).deptName {
             completion(.failure(.invalid))
         }
         completion(.failure(.emptyKeyword))
     }
     
-    override func getDeptList(collegeName: CollegeName) -> [Dept]? {
+    override func getDeptList(collegeName: CollegeName) -> [DeptItem]? {
         return collegeList?.filter({ $0.collegeName == collegeName }).first?.deptList
     }
     
@@ -72,18 +72,19 @@ public class NW_Soongsil: Organization {
     }
     
     override func setOrganizationDept() {
+        collegeList = [College]()
+        
         for collegeCode in SoongsilCollegeCode.allCases {
             var college = College()
             college.collegeName = collegeCode.rawValue
-            print("College Name : \(collegeCode.rawValue)")
             if let deptList = mappingTable?.filter({ $0.college == collegeCode.rawValue }).first?.deptList {
-                for deptName in deptList {
-                    let deptItem: Dept = Dept(deptName: deptName, urlString: "https://www.google.com")
-                    college.deptList?.append(deptItem)
+                var tempList = [DeptItem]()
+                for deptItem in deptList {
+                    tempList.append(deptItem)
                 }
+                college.deptList = tempList
             }
             collegeList?.append(college)
         }
-        print("CollegeList : \(collegeList?.count ?? 0)")
     }
 }

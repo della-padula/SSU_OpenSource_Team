@@ -17,7 +17,7 @@ protocol OrganizationProtocol {
     
     func getSchoolName() -> String?
     
-    func getDeptList(collegeName: CollegeName) -> [Dept]?
+    func getDeptList(collegeName: CollegeName) -> [DeptItem]?
     
     func getNoticeURL(dept name: DeptName, page: Int, quantity: Int, completion: @escaping (Result<URL, URLGenerateError>) -> Void)
     
@@ -46,7 +46,7 @@ public class Organization: OrganizationProtocol {
     
     public init() { }
     
-    func getDeptList(collegeName: CollegeName) -> [Dept]? { return nil }
+    func getDeptList(collegeName: CollegeName) -> [DeptItem]? { return nil }
     
     func getSchoolName() -> String? { return nil }
     
@@ -61,14 +61,15 @@ public class Organization: OrganizationProtocol {
     func setOrganizationDept() { }
 }
 
-public struct College {
-    public var deptList: [Dept]?
-    public var collegeName: String?
+public protocol DeptItem {
+    var urlString: String { get }
+    
+    var deptName: String { get }
 }
 
-public struct Dept {
-    public var deptName: String
-    public var urlString: String
+public struct College {
+    public var deptList: [DeptItem]?
+    public var collegeName: String?
 }
 
 // MARK: Notice
@@ -153,5 +154,5 @@ public enum OrganizationCode: Int {
 
 public struct CollegeDeptMapper {
     var college: CollegeName
-    var deptList: [DeptName]
+    var deptList: [DeptItem]
 }

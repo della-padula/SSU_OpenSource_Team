@@ -12,17 +12,17 @@ extension NW_Soongsil {
     func mappingCollegeDept() {
         mappingTable = [CollegeDeptMapper]()
         mappingTable?.append(CollegeDeptMapper(college: SoongsilCollegeCode.it.rawValue,
-                                               deptList: [SoongsilDeptCode.IT_Computer.rawValue,
-                                                          SoongsilDeptCode.IT_Media.rawValue,
-                                                          SoongsilDeptCode.IT_Electric.rawValue,
-                                                          SoongsilDeptCode.IT_Software.rawValue,
-                                                          SoongsilDeptCode.IT_SmartSystem.rawValue]))
+                                               deptList: [SoongsilDept.IT_Computer(page: nil, keyword: nil),
+                                                          SoongsilDept.IT_Media(page: nil, keyword: nil),
+                                                          SoongsilDept.IT_Electric(page: nil, keyword: nil),
+                                                          SoongsilDept.IT_Software(page: nil, keyword: nil),
+                                                          SoongsilDept.IT_SmartSystem(page: nil, keyword: nil)]))
         
         mappingTable?.append(CollegeDeptMapper(college: SoongsilCollegeCode.law.rawValue,
-                                               deptList: [SoongsilDeptCode.LAW_Law.rawValue,
-                                                          SoongsilDeptCode.LAW_IntlLaw.rawValue]))
+                                               deptList: [SoongsilDept.LAW_Law(page: nil, keyword: nil),
+                                                          SoongsilDept.LAW_IntlLaw(page: nil, keyword: nil)]))
         
         mappingTable?.append(CollegeDeptMapper(college: SoongsilCollegeCode.school.rawValue,
-                                               deptList: [SoongsilDeptCode.Soongsil.rawValue]))
+                                               deptList: [SoongsilDept.Soongsil(page: nil, keyword: nil)]))
     }
 }
