@@ -23,6 +23,10 @@ public class NoticeWorker {
         self.organization?.getNoticeURL(dept: code, page: page, quantity: quantity, completion: completion)
     }
     
+    public func getNoticeList() -> [Notice]? {
+        return self.organization?.getNoticeList(html: "TEST")
+    }
+    
     public func getDeptCount() -> Int? {
         return organization?.getDeptCount()
     }

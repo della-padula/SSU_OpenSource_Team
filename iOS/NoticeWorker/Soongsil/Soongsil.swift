@@ -9,19 +9,41 @@
 import Foundation
 
 public class NW_Soongsil: Organization {
-    public override init() { }
+    public override init() {
+        super.init()
+        self.setOrganizationDept()
+        self.organizationCode = .Soongsil
+    }
     
-    private func testFunc() {
-        var items = [Notice]()
-        let noticeProperty: [NoticeItem] = [.date(value: "2020-04-26"),
+    public func testFunc() -> [Notice] {
+        var items = [TestNotice]()
+        let noticeProperty: [TestNoticeProperty] = [.date(value: "2020-04-26"),
                                             .title(value: "Test Title"),
                                             .isActive(value: false),
                                             .url(value: "https://www.google.com"),
                                             .author(value: "TestAuthor"),
-                                            .custom(key: "viewCount", value: 100)]
+                                            .custom(key: "viewCount", value: 100),
+                                            .custom(key: "isNew", value: false)]
         
-        let item = Notice(property: noticeProperty)
+        let item = TestNotice(property: noticeProperty)
         items.append(item)
+        
+        noticeProperty.contains(where: ({ $0.key == TestNoticeProperty.title(value: "").key }))
+        
+        var testItems = [Notice]()
+        var testItem = Notice(title: "Test Title", url: "https://www.google.com")
+        testItem.author = "Test"
+        testItem.date = "2020-04-25"
+        testItem.isActive = true
+        testItem.custom = ["viewCount": 100]
+        testItems.append(testItem)
+        
+        testItem.custom?["viewCount"]
+        return testItems
+    }
+    
+    override func getNoticeList(html: String) -> [Notice]? {
+        return testFunc()
     }
     
     override func getSchoolName() -> String? {
@@ -36,7 +58,16 @@ public class NW_Soongsil: Organization {
         completion(.failure(.emptyKeyword))
     }
     
-    override func getDeptCount() -> Int? {
-        return super.deptList?.count
+    override func getDeptCount(collegeName: String) -> Int? {
+        return super.collegeList?.filter({ $0.collegeName == collegeName }).count
+    }
+    
+    override func setOrganizationDept() {
+        var college = College()
+        let dept: Dept = Dept(deptName: "테스트학과", urlString: "https://www.google.com")
+        
+        college.collegeName = "테스트 단과대학"
+        college.deptList?.append(dept)
+        collegeList?.append(college)
     }
 }

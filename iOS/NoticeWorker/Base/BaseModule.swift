@@ -16,17 +16,25 @@ protocol OrganizationProtocol {
     
     func getNoticeURL(dept code: DeptCode, page: Int, quantity: Int, completion: @escaping (Result<URL, URLGenerateError>) -> Void)
     
-    func getDeptCount() -> Int?
+    func getDeptCount(collegeName: String) -> Int?
+    
+    func setOrganizationDept()
 }
 
 protocol OrganizationParserProtocol {
-    func getNoticeList() -> [Notice]?
+    var organizationCode: OrganizationCode?
     
-//    func getAttachmentList() ->
+    func getNoticeList(completion: @escaping (Result<[Notice], HTMLParseError>) -> Void)
+    
+    func getAttachmentList(completion: @escaping (Result<[Attachment], HTMLParseError>) -> Void)
+    
+    func getNoticeContent(completion: @escaping (Result<NoticeContent, HTMLParseError>) -> Void)
 }
 
 public class Organization: OrganizationProtocol {
-    var deptList: [Dept]?
+    var collegeList: [College]?
+    
+    var organizationCode: OrganizationCode?
     
     public init() { }
     
@@ -34,20 +42,48 @@ public class Organization: OrganizationProtocol {
     
     func getNoticeURL(dept code: DeptCode, page: Int, quantity: Int, completion: @escaping (Result<URL, URLGenerateError>) -> Void) { }
     
-    func getDeptCount() -> Int? { return nil }
+    func getDeptCount(collegeName: String) -> Int? { return nil }
+    
+    func getNoticeList(html: String) -> [Notice]? { return nil }
+    
+    func setOrganizationDept() { }
 }
 
-public protocol Dept {
-    var deptName: String { get set }
-    var noticeURLString: String { get set }
+public struct College {
+    var deptList: [Dept]?
+    var collegeName: String?
+}
+
+public struct Dept {
+    var deptName: String
+    var urlString: String
 }
 
 // MARK: Notice
-public struct Notice {
-    var property: [NoticeItem]
+public struct TestNotice {
+    var property: [TestNoticeProperty]
 }
 
-public enum NoticeItem {
+public struct Notice {
+    var title: String
+    var url: String
+    var date: String?
+    var author: String?
+    var isActive: Bool?
+    var custom: [String:Any?]?
+    
+    public init(title: String, url: String) {
+        self.title = title
+        self.url = url
+    }
+}
+
+public struct NoticeContent {
+    var content: String
+    var attachments: [Attachment]
+}
+
+public enum TestNoticeProperty {
     case title(value: String)
     case url(value: String)
     case date(value: String?)

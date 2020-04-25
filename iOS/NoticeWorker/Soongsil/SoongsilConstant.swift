@@ -24,3 +24,5 @@ public enum SoongsilDeptCode: DeptCode {
     case itSoftware
     case itSmart
 }
+
+
