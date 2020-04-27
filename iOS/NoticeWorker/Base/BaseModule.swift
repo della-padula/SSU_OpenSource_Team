@@ -28,6 +28,8 @@ protocol OrganizationProtocol {
     func setOrganizationDept()
     
     func generateCollegeList() -> [CollegeName]?
+    
+    func mappingCollegeDept()
 }
 
 protocol OrganizationParserProtocol {
@@ -64,10 +66,13 @@ public class Organization: OrganizationProtocol {
     
     func getNoticeList(html: String) -> [Notice]? { return nil }
     
+    func mappingCollegeDept() { }
+    
     func setOrganizationDept() {
         collegeList = [College]()
+        guard let list = self.collegeCodeList else { return }
         
-        for collegeCode in self.collegeCodeList as! [CollegeName] {
+        for collegeCode in list {
             var college = College()
             college.collegeName = collegeCode
             if let deptList = mappingTable?.filter({ $0.college == collegeCode }).first?.deptList {

@@ -81,20 +81,7 @@ public class NW_Soongsil: Organization {
         return super.collegeList?.filter({ $0.collegeName == collegeName }).first?.deptList?.count
     }
     
-//    override func setOrganizationDept() {
-//        collegeList = [College]()
-//        
-//        for collegeCode in self.collegeCodeList as! [CollegeName] {
-//            var college = College()
-//            college.collegeName = collegeCode
-//            if let deptList = mappingTable?.filter({ $0.college == collegeCode }).first?.deptList {
-//                var tempList = [DeptItem]()
-//                for deptItem in deptList {
-//                    tempList.append(deptItem)
-//                }
-//                college.deptList = tempList
-//            }
-//            collegeList?.append(college)
-//        }
-//    }
+    override func mappingCollegeDept() {
+        self.mappingSoongsilCollegeDept()
+    }
 }
