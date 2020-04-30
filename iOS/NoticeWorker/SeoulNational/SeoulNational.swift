@@ -1,14 +1,14 @@
 //
-//  Seoul_Soongsil.swift
+//  SeoulNational.swift
 //  NoticeWorker
 //
-//  Created by 김태인 on 2020/04/24.
+//  Created by Denny on 2020/04/30.
 //  Copyright © 2020 김태인. All rights reserved.
 //
 
 import Foundation
 
-class NW_Soongsil: Organization {
+class NW_SeoulNational: Organization {
     override init() {
         super.init()
         
@@ -20,7 +20,7 @@ class NW_Soongsil: Organization {
     
     override func generateCollegeList() -> [CollegeName]? {
         var collegeList = [CollegeName]()
-        for codeCase in SoongsilCollegeCode.allCases {
+        for codeCase in SeoulCollegeCode.allCases {
             collegeList.append(codeCase.rawValue)
         }
         return collegeList
@@ -57,29 +57,16 @@ class NW_Soongsil: Organization {
         return testFunc()
     }
     
-    override public func getAllDeptList() -> [DeptItem]? {
-        if collegeList != nil {
-            var list = [DeptItem]()
-            for college in collegeList! {
-                if let deptList = college.deptList {
-                    list.append(contentsOf: deptList)
-                }
-            }
-            return list
-        }
-        return nil
-    }
-    
     override func getCollegeCount() -> Int? {
         return super.collegeList?.count
     }
     
     override public func getSchoolName() -> String? {
-        return "숭실대학교"
+        return "서울대학교"
     }
     
     override func getNoticeURL(dept item: DeptItem, completion: @escaping (Result<URL, URLGenerateError>) -> Void) {
-//        completion(.failure(.emptyKeyword))
+        //        completion(.failure(.emptyKeyword))
         if let url = URL(string: item.urlString) {
             completion(.success(url))
         } else {
@@ -96,6 +83,6 @@ class NW_Soongsil: Organization {
     }
     
     override func mappingCollegeDept() {
-        self.mappingSoongsilCollegeDept()
+        self.mappingSeoulCollegeDept()
     }
 }

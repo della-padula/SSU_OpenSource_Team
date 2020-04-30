@@ -16,6 +16,10 @@
 		B0D03B3A24531BE800E3EF46 /* Soongsil.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0D03B3924531BE800E3EF46 /* Soongsil.swift */; };
 		B0D03B3C24531FBD00E3EF46 /* BaseModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0D03B3B24531FBD00E3EF46 /* BaseModule.swift */; };
 		B0D03B3E24531FD800E3EF46 /* ResultCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0D03B3D24531FD800E3EF46 /* ResultCode.swift */; };
+		B0F00B84245AAC30001B2ED9 /* NoticeWorkerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0F00B83245AAC30001B2ED9 /* NoticeWorkerManager.swift */; };
+		B0F00B87245AAD3D001B2ED9 /* SeoulNational.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0F00B86245AAD3D001B2ED9 /* SeoulNational.swift */; };
+		B0F00B89245AADBC001B2ED9 /* SeoulNationalConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0F00B88245AADBC001B2ED9 /* SeoulNationalConstant.swift */; };
+		B0F00B8B245AADF6001B2ED9 /* SeoulNational+Mapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0F00B8A245AADF6001B2ED9 /* SeoulNational+Mapper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +34,10 @@
 		B0D03B3924531BE800E3EF46 /* Soongsil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Soongsil.swift; sourceTree = "<group>"; };
 		B0D03B3B24531FBD00E3EF46 /* BaseModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseModule.swift; sourceTree = "<group>"; };
 		B0D03B3D24531FD800E3EF46 /* ResultCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultCode.swift; sourceTree = "<group>"; };
+		B0F00B83245AAC30001B2ED9 /* NoticeWorkerManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoticeWorkerManager.swift; sourceTree = "<group>"; };
+		B0F00B86245AAD3D001B2ED9 /* SeoulNational.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeoulNational.swift; sourceTree = "<group>"; };
+		B0F00B88245AADBC001B2ED9 /* SeoulNationalConstant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeoulNationalConstant.swift; sourceTree = "<group>"; };
+		B0F00B8A245AADF6001B2ED9 /* SeoulNational+Mapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SeoulNational+Mapper.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +72,7 @@
 			children = (
 				B0D03B402453243B00E3EF46 /* Base */,
 				B0D03B3F2453243000E3EF46 /* Soongsil */,
+				B0F00B85245AAD22001B2ED9 /* SeoulNational */,
 				B058B3CD242EE7A2009A4682 /* NoticeWorker.h */,
 				B058B3CE242EE7A2009A4682 /* Info.plist */,
 			);
@@ -88,8 +97,19 @@
 				B0D03B372453137000E3EF46 /* NURL.swift */,
 				B0D03B3B24531FBD00E3EF46 /* BaseModule.swift */,
 				B0D03B3D24531FD800E3EF46 /* ResultCode.swift */,
+				B0F00B83245AAC30001B2ED9 /* NoticeWorkerManager.swift */,
 			);
 			path = Base;
+			sourceTree = "<group>";
+		};
+		B0F00B85245AAD22001B2ED9 /* SeoulNational */ = {
+			isa = PBXGroup;
+			children = (
+				B0F00B86245AAD3D001B2ED9 /* SeoulNational.swift */,
+				B0F00B88245AADBC001B2ED9 /* SeoulNationalConstant.swift */,
+				B0F00B8A245AADF6001B2ED9 /* SeoulNational+Mapper.swift */,
+			);
+			path = SeoulNational;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -172,14 +192,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B0F00B84245AAC30001B2ED9 /* NoticeWorkerManager.swift in Sources */,
 				B0D03B3C24531FBD00E3EF46 /* BaseModule.swift in Sources */,
 				B004E0252453DCA500C670FD /* SoongsilConstant.swift in Sources */,
 				B0D03B382453137000E3EF46 /* NURL.swift in Sources */,
+				B0F00B87245AAD3D001B2ED9 /* SeoulNational.swift in Sources */,
 				B004E0272453DCBF00C670FD /* SoongsilParser.swift in Sources */,
 				B0D03B3A24531BE800E3EF46 /* Soongsil.swift in Sources */,
 				B058B3D6242EEA1B009A4682 /* NoticeWorker.swift in Sources */,
+				B0F00B89245AADBC001B2ED9 /* SeoulNationalConstant.swift in Sources */,
 				B004E0292453F3E700C670FD /* Soongsil+Mapper.swift in Sources */,
 				B0D03B3E24531FD800E3EF46 /* ResultCode.swift in Sources */,
+				B0F00B8B245AADF6001B2ED9 /* SeoulNational+Mapper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

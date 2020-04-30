@@ -9,10 +9,40 @@
 import Foundation
 
 public class NoticeWorker {
-    public var organization: Organization?
+    private var organization: Organization?
+    var organizationList = [Organization]()
     
     public init() {
         print("Notice Worker Initialize")
+        setOrganizationList()
+    }
+    
+    public func getOrganizationList() -> [Organization] {
+        return organizationList
+    }
+    
+    public func getCurrentOrganization() -> Organization? {
+        return organization
+    }
+    
+    public func getOrganization(byName: String) -> Organization? {
+        for organization in self.organizationList {
+            if organization.getSchoolName() == byName {
+                return organization
+            }
+        }
+        return nil
+    }
+    
+    public func getOrganization(byIndex: Int) -> Organization? {
+        if byIndex > organizationList.count - 1 {
+            return nil
+        }
+        return organizationList[byIndex]
+    }
+    
+    public func setOrganization(organization: Organization) {
+        self.organization = organization
     }
     
     public func getSchoolName() -> String? {
@@ -21,6 +51,10 @@ public class NoticeWorker {
     
     public func getDeptList(collegeName: CollegeName) -> [DeptItem]? {
         return organization?.getDeptList(collegeName: collegeName)
+    }
+    
+    public func getAllDeptList() -> [DeptItem]? {
+        return organization?.getAllDeptList()
     }
     
     public func getNoticeURL(dept item: DeptItem, completion: @escaping (Result<URL, URLGenerateError>) -> Void) {
