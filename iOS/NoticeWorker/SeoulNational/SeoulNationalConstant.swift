@@ -26,7 +26,7 @@ public enum SeoulDept: DeptItem {
     
     case Seoul(page: Int?, keyword: String?)
     
-    public var urlString: String {
+    public func getURLString(page: Int, keyword: String?) -> String {
         switch self {
         case .IT_Computer(let page, let keyword):
             return "http://cse.ssu.ac.kr/03_sub/01_sub.htm?page=\(page ?? 1)&key=\(keyword ?? "")&keyfield=subject&category=&bbs_code=Ti_BBS_1"

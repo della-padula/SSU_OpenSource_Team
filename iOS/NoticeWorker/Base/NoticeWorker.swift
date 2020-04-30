@@ -57,8 +57,8 @@ public class NoticeWorker {
         return organization?.getAllDeptList()
     }
     
-    public func getNoticeURL(dept item: DeptItem, completion: @escaping (Result<URL, URLGenerateError>) -> Void) {
-        self.organization?.getNoticeURL(dept: item, completion: completion)
+    public func getNoticeURL(dept item: DeptItem, page: Int, keyword: String?, completion: @escaping (Result<URL, URLGenerateError>) -> Void) {
+        self.organization?.getNoticeURL(dept: item, page: page, keyword: keyword, completion: completion)
     }
     
     public func getNoticeList() -> [Notice]? {

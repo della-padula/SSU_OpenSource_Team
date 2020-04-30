@@ -78,9 +78,9 @@ class NW_Soongsil: Organization {
         return "숭실대학교"
     }
     
-    override func getNoticeURL(dept item: DeptItem, completion: @escaping (Result<URL, URLGenerateError>) -> Void) {
+    override func getNoticeURL(dept item: DeptItem, page: Int, keyword: String?, completion: @escaping (Result<URL, URLGenerateError>) -> Void) {
 //        completion(.failure(.emptyKeyword))
-        if let url = URL(string: item.urlString) {
+        if let url = URL(string: item.getURLString(page: page, keyword: keyword)) {
             completion(.success(url))
         } else {
             completion(.failure(.invalid))

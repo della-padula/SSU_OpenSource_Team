@@ -21,7 +21,7 @@ protocol OrganizationProtocol {
     
     func getAllDeptList() -> [DeptItem]?
     
-    func getNoticeURL(dept item: DeptItem, completion: @escaping (Result<URL, URLGenerateError>) -> Void)
+    func getNoticeURL(dept item: DeptItem, page: Int, keyword: String?, completion: @escaping (Result<URL, URLGenerateError>) -> Void)
     
     func getCollegeCount() -> Int?
     
@@ -62,7 +62,7 @@ public class Organization: OrganizationProtocol {
     
     func generateCollegeList() -> [CollegeName]? { return nil }
     
-    func getNoticeURL(dept item: DeptItem, completion: @escaping (Result<URL, URLGenerateError>) -> Void) { }
+    func getNoticeURL(dept item: DeptItem, page: Int, keyword: String?, completion: @escaping (Result<URL, URLGenerateError>) -> Void) { }
     
     func getDeptCount(collegeName: String) -> Int? { return nil }
     
@@ -92,7 +92,7 @@ public class Organization: OrganizationProtocol {
 }
 
 public protocol DeptItem {
-    var urlString: String { get }
+    func getURLString(page: Int, keyword: String?) -> String
     
     var deptName: String { get }
 }
