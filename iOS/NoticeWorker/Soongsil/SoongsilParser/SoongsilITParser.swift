@@ -1,36 +1,13 @@
 //
-//  SoongsilParser.swift
+//  SoongsilParserIT.swift
 //  NoticeWorker
 //
-//  Created by 김태인 on 2020/04/25.
+//  Created by Denny on 2020/04/30.
 //  Copyright © 2020 김태인. All rights reserved.
 //
 
 import Foundation
 import Kanna
-
-typealias Action = (Result<[Notice], HTMLParseError>) -> Void
-
-public class SoongsilParser: OrganizationParserProtocol {
-    public var deptItem: DeptItem
-    
-    required public init(deptItem: DeptItem) {
-        self.deptItem = deptItem
-    }
-    
-    func getNoticeList(page: Int, html: String) -> Result<[Notice], HTMLParseError> {
-        return SoongsilITParser.parseCSEList(page: page, html: html)
-    }
-    
-    func getAttachmentList(completion: @escaping (Result<[Attachment], HTMLParseError>) -> Void) {
-        completion(.failure(.emptyContent))
-    }
-    
-    func getNoticeContent(completion: @escaping (Result<NoticeContent, HTMLParseError>) -> Void) {
-        completion(.failure(.emptyContent))
-    }
-    
-}
 
 public class SoongsilITParser {
     private static var noticeList = [Notice]()
@@ -55,6 +32,7 @@ public class SoongsilITParser {
     
     static func parseCSEList(page: Int, html: String) -> Result<[Notice], HTMLParseError> {
         var index = 0
+        cleanList()
         do {
             let doc = try HTML(html: html, encoding: .utf8)
             for product in doc.xpath("//table/tbody/tr/*") {
@@ -80,7 +58,7 @@ public class SoongsilITParser {
                             let noticeTitle = product.content ?? ""
                             authorList.append(noticeAuthor)
                             titleList.append(noticeTitle)
-                            pageStringList.append("http://cse.ssu.ac.kr/03_sub/01_sub.htm\(pageString)")
+                            urlList.append("http://cse.ssu.ac.kr/03_sub/01_sub.htm\(pageString)")
                             dateStringList.append(noticeDate)
                             isNoticeList.append(false)
                             break;
@@ -116,7 +94,7 @@ public class SoongsilITParser {
                                 let noticeTitle = product.content ?? ""
                                 authorList.append(noticeAuthor)
                                 titleList.append(noticeTitle)
-                                pageStringList.append("http://cse.ssu.ac.kr/03_sub/01_sub.htm\(pageString)")
+                                urlList.append("http://cse.ssu.ac.kr/03_sub/01_sub.htm\(pageString)")
                                 dateStringList.append(noticeDate)
                                 isNoticeList.append(true)
                                 break;
@@ -128,10 +106,11 @@ public class SoongsilITParser {
                     }
                 }
             }
+
             index = 0
             
             for _ in authorList {
-                var item = Notice(title: titleList[index], url: pageStringList[index])
+                var item = Notice(title: titleList[index], url: urlList[index])
                 item.author = authorList[index]
                 item.date = dateStringList[index]
                 item.isActive = isNoticeList[index]
@@ -148,19 +127,68 @@ public class SoongsilITParser {
         return .failure(.emptyContent)
     }
     
-    static func parseMedia(page: Int, html: String, completion: @escaping (Result<NoticeContent, HTMLParseError>) -> Void) {
-        completion(.failure(.emptyContent))
+    static func parseMediaList(page: Int, html: String) -> Result<[Notice], HTMLParseError> {
+        var index = 0
+        cleanList()
+        do {
+            let doc = try HTML(html: html, encoding: .utf8)
+            for product in doc.css("table tbody tr a") {
+                let noticeId = product["onclick"]?.getArrayAfterRegex(regex: "['](.*?)[']")[0] ?? ""
+                let url = "http://media.ssu.ac.kr/sub.php?code=XxH00AXY&mode=view&board_num=\(noticeId)&category=1"
+                urlList.append(url)
+                titleList.append(product.content ?? "")
+            }
+            
+            index = 0
+            for product in doc.css("td[align='center']") {
+                if index % 4 == 0 {
+                    let isNotice = product.text ?? ""
+                    if !isNotice.isNumeric() {
+                        isNoticeList.append(true)
+                    } else {
+                        isNoticeList.append(false)
+                    }
+                }
+                
+                if index % 4 == 1 {
+                    authorList.append(product.content ?? "")
+                } else if index % 4 == 2 {
+                    dateStringList.append(product.content ?? "")
+                }
+                index += 1
+            }
+            
+            index = 0
+            
+            for _ in authorList {
+                var item = Notice(title: titleList[index], url: urlList[index])
+                item.author = authorList[index]
+                item.date = dateStringList[index]
+                item.isActive = isNoticeList[index]
+//                item.custom = ["hasAttachment" : attachmentCheckList[index]]
+                
+                noticeList.append(item)
+                index += 1
+            }
+            return .success(noticeList)
+        } catch let error {
+            print("Error : \(error)")
+        }
+        return .failure(.emptyContent)
     }
     
-    static func parseSmart(page: Int, html: String, completion: @escaping (Result<NoticeContent, HTMLParseError>) -> Void) {
-        completion(.failure(.emptyContent))
+    static func parseSmartSWList(page: Int, html: String) -> Result<[Notice], HTMLParseError> {
+        var index = 0
+        return .failure(.emptyContent)
     }
     
-    static func parseSW(page: Int, html: String, completion: @escaping (Result<NoticeContent, HTMLParseError>) -> Void) {
-        completion(.failure(.emptyContent))
+    static func parseSWList(page: Int, html: String) -> Result<[Notice], HTMLParseError> {
+        var index = 0
+        return .failure(.emptyContent)
     }
     
-    static func parseElec(page: Int, html: String, completion: @escaping (Result<NoticeContent, HTMLParseError>) -> Void) {
-        completion(.failure(.emptyContent))
+    static func parseElecList(page: Int, html: String) -> Result<[Notice], HTMLParseError> {
+        var index = 0
+        return .failure(.emptyContent)
     }
 }
