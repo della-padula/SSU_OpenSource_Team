@@ -65,12 +65,13 @@ public class NW_Soongsil: Organization {
         return "숭실대학교"
     }
     
-    override func getNoticeURL(dept name: DeptName, page: Int, quantity: Int, completion: @escaping (Result<URL, URLGenerateError>) -> Void) {
-        // MARK: TEMP
-        if name == SoongsilDept.IT_Computer(page: nil, keyword: nil).deptName {
+    override func getNoticeURL(dept item: DeptItem, completion: @escaping (Result<URL, URLGenerateError>) -> Void) {
+//        completion(.failure(.emptyKeyword))
+        if let url = URL(string: item.urlString) {
+            completion(.success(url))
+        } else {
             completion(.failure(.invalid))
         }
-        completion(.failure(.emptyKeyword))
     }
     
     override func getDeptList(collegeName: CollegeName) -> [DeptItem]? {
