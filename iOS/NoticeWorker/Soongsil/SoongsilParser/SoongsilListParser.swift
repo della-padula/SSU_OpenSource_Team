@@ -25,6 +25,8 @@ public class SoongsilListParser {
             return SoongsilLawParser.parseLAWList(page: page, html: html)
         case SoongsilDept.LAW_IntlLaw:
             return SoongsilLawParser.parseINTLAWList(page: page, html: html)
+        case SoongsilDept.Soongsil:
+            return SoongsilCommonParser.parseSoongsilList(page: page, html: html)
         default:
             break
         }
