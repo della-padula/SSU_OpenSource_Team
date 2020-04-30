@@ -18,9 +18,9 @@ public class SoongsilListParser {
         case SoongsilDept.IT_Electric:
             return SoongsilITParser.parseElecList(page: page, html: html)
         case SoongsilDept.IT_Software:
-            return SoongsilITParser.parseSmartSWList(page: page, html: html)
-        case SoongsilDept.IT_SmartSystem:
             return SoongsilITParser.parseSWList(page: page, html: html)
+        case SoongsilDept.IT_SmartSystem:
+            return SoongsilITParser.parseSmartSWList(page: page, html: html)
         case SoongsilDept.LAW_Law:
             break
         case SoongsilDept.LAW_IntlLaw:
