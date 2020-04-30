@@ -53,7 +53,7 @@ class NW_SeoulNational: Organization {
         return testItems
     }
     
-    override func getNoticeList(html: String) -> [Notice]? {
+    override func getNoticeList(dept: DeptItem, page: Int, html: String) -> [Notice]? {
         return testFunc()
     }
     
@@ -65,9 +65,9 @@ class NW_SeoulNational: Organization {
         return "서울대학교"
     }
     
-    override func getNoticeURL(dept item: DeptItem, completion: @escaping (Result<URL, URLGenerateError>) -> Void) {
+    override func getNoticeURL(dept item: DeptItem, page: Int, keyword: String?, completion: @escaping (Result<URL, URLGenerateError>) -> Void) {
         //        completion(.failure(.emptyKeyword))
-        if let url = URL(string: item.urlString) {
+        if let url = URL(string: item.getURLString(page: 1, keyword: nil)) {
             completion(.success(url))
         } else {
             completion(.failure(.invalid))

@@ -3,13 +3,19 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		B004E0252453DCA500C670FD /* SoongsilConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = B004E0242453DCA500C670FD /* SoongsilConstant.swift */; };
 		B004E0272453DCBF00C670FD /* SoongsilParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = B004E0262453DCBF00C670FD /* SoongsilParser.swift */; };
 		B004E0292453F3E700C670FD /* Soongsil+Mapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = B004E0282453F3E700C670FD /* Soongsil+Mapper.swift */; };
+		B01FB2B8245AF0C600B35DA8 /* SoongsilListParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = B01FB2B7245AF0C600B35DA8 /* SoongsilListParser.swift */; };
+		B01FB2BA245AF1EE00B35DA8 /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B01FB2B9245AF1EE00B35DA8 /* String+Extension.swift */; };
+		B01FB2BC245AF82200B35DA8 /* SoongsilLawParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = B01FB2BB245AF82200B35DA8 /* SoongsilLawParser.swift */; };
+		B01FB2BE245AF9C200B35DA8 /* SoongsilCommonParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = B01FB2BD245AF9C200B35DA8 /* SoongsilCommonParser.swift */; };
+		B037F682245AE7B200A8A6C7 /* Kanna in Frameworks */ = {isa = PBXBuildFile; productRef = B037F681245AE7B200A8A6C7 /* Kanna */; };
+		B037F685245AEF7C00A8A6C7 /* SoongsilITParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = B037F684245AEF7C00A8A6C7 /* SoongsilITParser.swift */; };
 		B058B3CF242EE7A2009A4682 /* NoticeWorker.h in Headers */ = {isa = PBXBuildFile; fileRef = B058B3CD242EE7A2009A4682 /* NoticeWorker.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B058B3D6242EEA1B009A4682 /* NoticeWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = B058B3D5242EEA1B009A4682 /* NoticeWorker.swift */; };
 		B0D03B382453137000E3EF46 /* NURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0D03B372453137000E3EF46 /* NURL.swift */; };
@@ -26,6 +32,11 @@
 		B004E0242453DCA500C670FD /* SoongsilConstant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoongsilConstant.swift; sourceTree = "<group>"; };
 		B004E0262453DCBF00C670FD /* SoongsilParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoongsilParser.swift; sourceTree = "<group>"; };
 		B004E0282453F3E700C670FD /* Soongsil+Mapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Soongsil+Mapper.swift"; sourceTree = "<group>"; };
+		B01FB2B7245AF0C600B35DA8 /* SoongsilListParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoongsilListParser.swift; sourceTree = "<group>"; };
+		B01FB2B9245AF1EE00B35DA8 /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
+		B01FB2BB245AF82200B35DA8 /* SoongsilLawParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoongsilLawParser.swift; sourceTree = "<group>"; };
+		B01FB2BD245AF9C200B35DA8 /* SoongsilCommonParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoongsilCommonParser.swift; sourceTree = "<group>"; };
+		B037F684245AEF7C00A8A6C7 /* SoongsilITParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoongsilITParser.swift; sourceTree = "<group>"; };
 		B058B3CA242EE7A2009A4682 /* NoticeWorker.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = NoticeWorker.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B058B3CD242EE7A2009A4682 /* NoticeWorker.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NoticeWorker.h; sourceTree = "<group>"; };
 		B058B3CE242EE7A2009A4682 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -45,12 +56,25 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B037F682245AE7B200A8A6C7 /* Kanna in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B037F683245AEF6000A8A6C7 /* SoongsilParser */ = {
+			isa = PBXGroup;
+			children = (
+				B004E0262453DCBF00C670FD /* SoongsilParser.swift */,
+				B037F684245AEF7C00A8A6C7 /* SoongsilITParser.swift */,
+				B01FB2B7245AF0C600B35DA8 /* SoongsilListParser.swift */,
+				B01FB2BB245AF82200B35DA8 /* SoongsilLawParser.swift */,
+				B01FB2BD245AF9C200B35DA8 /* SoongsilCommonParser.swift */,
+			);
+			path = SoongsilParser;
+			sourceTree = "<group>";
+		};
 		B058B3C0242EE7A2009A4682 = {
 			isa = PBXGroup;
 			children = (
@@ -82,9 +106,9 @@
 		B0D03B3F2453243000E3EF46 /* Soongsil */ = {
 			isa = PBXGroup;
 			children = (
+				B037F683245AEF6000A8A6C7 /* SoongsilParser */,
 				B0D03B3924531BE800E3EF46 /* Soongsil.swift */,
 				B004E0242453DCA500C670FD /* SoongsilConstant.swift */,
-				B004E0262453DCBF00C670FD /* SoongsilParser.swift */,
 				B004E0282453F3E700C670FD /* Soongsil+Mapper.swift */,
 			);
 			path = Soongsil;
@@ -98,6 +122,7 @@
 				B0D03B3B24531FBD00E3EF46 /* BaseModule.swift */,
 				B0D03B3D24531FD800E3EF46 /* ResultCode.swift */,
 				B0F00B83245AAC30001B2ED9 /* NoticeWorkerManager.swift */,
+				B01FB2B9245AF1EE00B35DA8 /* String+Extension.swift */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -140,6 +165,9 @@
 			dependencies = (
 			);
 			name = NoticeWorker;
+			packageProductDependencies = (
+				B037F681245AE7B200A8A6C7 /* Kanna */,
+			);
 			productName = NoticeWorker;
 			productReference = B058B3CA242EE7A2009A4682 /* NoticeWorker.framework */;
 			productType = "com.apple.product-type.framework";
@@ -168,6 +196,9 @@
 				Base,
 			);
 			mainGroup = B058B3C0242EE7A2009A4682;
+			packageReferences = (
+				B037F680245AE7B200A8A6C7 /* XCRemoteSwiftPackageReference "Kanna" */,
+			);
 			productRefGroup = B058B3CB242EE7A2009A4682 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -193,16 +224,21 @@
 			buildActionMask = 2147483647;
 			files = (
 				B0F00B84245AAC30001B2ED9 /* NoticeWorkerManager.swift in Sources */,
+				B01FB2BC245AF82200B35DA8 /* SoongsilLawParser.swift in Sources */,
 				B0D03B3C24531FBD00E3EF46 /* BaseModule.swift in Sources */,
 				B004E0252453DCA500C670FD /* SoongsilConstant.swift in Sources */,
+				B037F685245AEF7C00A8A6C7 /* SoongsilITParser.swift in Sources */,
 				B0D03B382453137000E3EF46 /* NURL.swift in Sources */,
 				B0F00B87245AAD3D001B2ED9 /* SeoulNational.swift in Sources */,
 				B004E0272453DCBF00C670FD /* SoongsilParser.swift in Sources */,
+				B01FB2BE245AF9C200B35DA8 /* SoongsilCommonParser.swift in Sources */,
 				B0D03B3A24531BE800E3EF46 /* Soongsil.swift in Sources */,
+				B01FB2B8245AF0C600B35DA8 /* SoongsilListParser.swift in Sources */,
 				B058B3D6242EEA1B009A4682 /* NoticeWorker.swift in Sources */,
 				B0F00B89245AADBC001B2ED9 /* SeoulNationalConstant.swift in Sources */,
 				B004E0292453F3E700C670FD /* Soongsil+Mapper.swift in Sources */,
 				B0D03B3E24531FD800E3EF46 /* ResultCode.swift in Sources */,
+				B01FB2BA245AF1EE00B35DA8 /* String+Extension.swift in Sources */,
 				B0F00B8B245AADF6001B2ED9 /* SeoulNational+Mapper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -405,6 +441,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		B037F680245AE7B200A8A6C7 /* XCRemoteSwiftPackageReference "Kanna" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/tid-kijyun/Kanna";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.2.2;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		B037F681245AE7B200A8A6C7 /* Kanna */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B037F680245AE7B200A8A6C7 /* XCRemoteSwiftPackageReference "Kanna" */;
+			productName = Kanna;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = B058B3C1242EE7A2009A4682 /* Project object */;
 }

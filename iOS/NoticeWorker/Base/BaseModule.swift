@@ -21,7 +21,7 @@ protocol OrganizationProtocol {
     
     func getAllDeptList() -> [DeptItem]?
     
-    func getNoticeURL(dept item: DeptItem, completion: @escaping (Result<URL, URLGenerateError>) -> Void)
+    func getNoticeURL(dept item: DeptItem, page: Int, keyword: String?, completion: @escaping (Result<URL, URLGenerateError>) -> Void)
     
     func getCollegeCount() -> Int?
     
@@ -36,7 +36,9 @@ protocol OrganizationProtocol {
 
 protocol OrganizationParserProtocol {
     
-    func getNoticeList(completion: @escaping (Result<[Notice], HTMLParseError>) -> Void)
+    init(deptItem: DeptItem)
+    
+    func getNoticeList(page: Int, html: String) -> Result<[Notice], HTMLParseError>
     
     func getAttachmentList(completion: @escaping (Result<[Attachment], HTMLParseError>) -> Void)
     
@@ -62,13 +64,13 @@ public class Organization: OrganizationProtocol {
     
     func generateCollegeList() -> [CollegeName]? { return nil }
     
-    func getNoticeURL(dept item: DeptItem, completion: @escaping (Result<URL, URLGenerateError>) -> Void) { }
+    func getNoticeURL(dept item: DeptItem, page: Int, keyword: String?, completion: @escaping (Result<URL, URLGenerateError>) -> Void) { }
     
     func getDeptCount(collegeName: String) -> Int? { return nil }
     
     func getCollegeCount() -> Int? { return nil }
     
-    func getNoticeList(html: String) -> [Notice]? { return nil }
+    func getNoticeList(dept: DeptItem, page: Int, html: String) -> [Notice]? { return nil }
     
     func mappingCollegeDept() { }
     
@@ -92,8 +94,7 @@ public class Organization: OrganizationProtocol {
 }
 
 public protocol DeptItem {
-    var urlString: String { get }
-    
+    func getURLString(page: Int, keyword: String?) -> String
     var deptName: String { get }
 }
 
@@ -104,16 +105,16 @@ public struct College {
 
 // MARK: Notice
 public struct TestNotice {
-    var property: [TestNoticeProperty]
+    public var property: [TestNoticeProperty]
 }
 
 public struct Notice {
-    var title: String
-    var url: String
-    var date: String?
-    var author: String?
-    var isActive: Bool?
-    var custom: [String:Any?]?
+    public var title: String
+    public var url: String
+    public var date: String?
+    public var author: String?
+    public var isActive: Bool?
+    public var custom: [String:Any?]?
     
     public init(title: String, url: String) {
         self.title = title

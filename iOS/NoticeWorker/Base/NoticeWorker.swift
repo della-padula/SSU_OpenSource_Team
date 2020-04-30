@@ -57,12 +57,12 @@ public class NoticeWorker {
         return organization?.getAllDeptList()
     }
     
-    public func getNoticeURL(dept item: DeptItem, completion: @escaping (Result<URL, URLGenerateError>) -> Void) {
-        self.organization?.getNoticeURL(dept: item, completion: completion)
+    public func getNoticeURL(dept item: DeptItem, page: Int, keyword: String?, completion: @escaping (Result<URL, URLGenerateError>) -> Void) {
+        self.organization?.getNoticeURL(dept: item, page: page, keyword: keyword, completion: completion)
     }
     
-    public func getNoticeList() -> [Notice]? {
-        return self.organization?.getNoticeList(html: "TEST")
+    public func getNoticeList(dept: DeptItem, page: Int, html: String) -> [Notice]? {
+        return self.organization?.getNoticeList(dept: dept, page: page, html: html)
     }
     
     public func getCollegeCount() -> Int? {
