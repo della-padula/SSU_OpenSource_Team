@@ -104,16 +104,16 @@ public struct College {
 
 // MARK: Notice
 public struct TestNotice {
-    var property: [TestNoticeProperty]
+    public var property: [TestNoticeProperty]
 }
 
 public struct Notice {
-    var title: String
-    var url: String
-    var date: String?
-    var author: String?
-    var isActive: Bool?
-    var custom: [String:Any?]?
+    public var title: String
+    public var url: String
+    public var date: String?
+    public var author: String?
+    public var isActive: Bool?
+    public var custom: [String:Any?]?
     
     public init(title: String, url: String) {
         self.title = title
