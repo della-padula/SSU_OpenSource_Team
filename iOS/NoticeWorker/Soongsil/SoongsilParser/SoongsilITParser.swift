@@ -9,15 +9,15 @@
 import Foundation
 import Kanna
 
-public class SoongsilITParser {
-    private static var noticeList = [Notice]()
-    private static var authorList = [String]()
-    private static var titleList  = [String]()
-    private static var pageStringList = [String]()
-    private static var dateStringList = [String]()
-    private static var isNoticeList = [Bool]()
-    private static var urlList    = [String]()
-    private static var attachmentCheckList = [Bool]()
+public class SoongsilDeptParser {
+    static var noticeList = [Notice]()
+    static var authorList = [String]()
+    static var titleList  = [String]()
+    static var pageStringList = [String]()
+    static var dateStringList = [String]()
+    static var isNoticeList = [Bool]()
+    static var urlList    = [String]()
+    static var attachmentCheckList = [Bool]()
     
     static func cleanList() {
         noticeList.removeAll()
@@ -29,7 +29,9 @@ public class SoongsilITParser {
         urlList.removeAll()
         attachmentCheckList.removeAll()
     }
-    
+}
+
+public class SoongsilITParser: SoongsilDeptParser {
     static func parseCSEList(page: Int, html: String) -> Result<[Notice], HTMLParseError> {
         var index = 0
         cleanList()
