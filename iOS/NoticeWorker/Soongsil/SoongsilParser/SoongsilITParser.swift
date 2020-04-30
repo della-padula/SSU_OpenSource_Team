@@ -165,7 +165,6 @@ public class SoongsilITParser {
                 item.author = authorList[index]
                 item.date = dateStringList[index]
                 item.isActive = isNoticeList[index]
-//                item.custom = ["hasAttachment" : attachmentCheckList[index]]
                 
                 noticeList.append(item)
                 index += 1
@@ -179,11 +178,117 @@ public class SoongsilITParser {
     
     static func parseSmartSWList(page: Int, html: String) -> Result<[Notice], HTMLParseError> {
         var index = 0
+        cleanList()
+        
+        do {
+            let doc = try HTML(html: html, encoding: .utf8)
+            for product in doc.css("td[class^=num]") {
+                let num = product.css("b").first?.text ?? ""
+                
+                if num.isEmpty {
+                    // isNotice
+                    isNoticeList.append(false)
+                } else {
+                    isNoticeList.append(true)
+                }
+            }
+            
+            for product in doc.css("td[class^=subject]") {
+                var hasAttachment = false
+                for image in product.css("img") {
+                    hasAttachment = (image["src"] ?? "").contains("icon_file.gif")
+                }
+                attachmentCheckList.append(hasAttachment)
+            }
+            
+            for product in doc.css("td[class^=subject] a") {
+                var url = product["href"] ?? ""
+                url = url.replacingOccurrences(of: "..", with: "https://sw.ssu.ac.kr")
+                titleList.append(product.text ?? "")
+                urlList.append(url)
+            }
+            
+            for product in doc.css("td[class^=datetime]") {
+                dateStringList.append(product.text ?? "")
+            }
+            
+            for product in doc.css("td[class^=name]") {
+                authorList.append(product.text ?? "")
+            }
+            
+            index = 0
+            for _ in authorList {
+                var item = Notice(title: titleList[index], url: urlList[index])
+                item.author = authorList[index]
+                item.date = dateStringList[index]
+                item.isActive = isNoticeList[index]
+                item.custom = ["hasAttachment" : attachmentCheckList[index]]
+                
+                noticeList.append(item)
+                index += 1
+            }
+            return .success(noticeList)
+        } catch let error {
+            print("Error : \(error)")
+        }
         return .failure(.emptyContent)
     }
     
     static func parseSWList(page: Int, html: String) -> Result<[Notice], HTMLParseError> {
         var index = 0
+        cleanList()
+        
+        do {
+            let doc = try HTML(html: html, encoding: .utf8)
+            for product in doc.css("td[class^=num]") {
+                let num = product.css("b").first?.text ?? ""
+                
+                if num.isEmpty {
+                    // isNotice
+                    isNoticeList.append(false)
+                } else {
+                    isNoticeList.append(true)
+                }
+            }
+            
+            for product in doc.css("td[class^=subject]") {
+                var hasAttachment = false
+                for image in product.css("img") {
+                    hasAttachment = (image["src"] ?? "").contains("icon_file.gif")
+                }
+                attachmentCheckList.append(hasAttachment)
+            }
+            
+            for product in doc.css("td[class^=subject] a") {
+                var url = product["href"] ?? ""
+                url = url.replacingOccurrences(of: "..", with: "https://sw.ssu.ac.kr")
+                titleList.append(product.text ?? "")
+                urlList.append(url)
+            }
+            
+            for product in doc.css("td[class^=datetime]") {
+                dateStringList.append(product.text ?? "")
+            }
+            
+            for product in doc.css("td[class^=name]") {
+                authorList.append(product.text ?? "")
+            }
+            
+            index = 0
+            for _ in authorList {
+                var item = Notice(title: titleList[index], url: urlList[index])
+                item.author = authorList[index]
+                item.date = dateStringList[index]
+                item.isActive = isNoticeList[index]
+                item.custom = ["hasAttachment" : attachmentCheckList[index]]
+                
+                noticeList.append(item)
+                index += 1
+            }
+            return .success(noticeList)
+        } catch let error {
+            print("Error : \(error)")
+        }
         return .failure(.emptyContent)
     }
     
