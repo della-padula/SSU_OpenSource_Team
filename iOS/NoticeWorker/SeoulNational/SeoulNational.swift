@@ -74,6 +74,19 @@ class NW_SeoulNational: Organization {
         }
     }
     
+    override func getAllDeptList() -> [DeptItem]? {
+        if collegeList != nil {
+            var list = [DeptItem]()
+            for college in collegeList! {
+                if let deptList = college.deptList {
+                    list.append(contentsOf: deptList)
+                }
+            }
+            return list
+        }
+        return nil
+    }
+    
     override func getDeptList(collegeName: CollegeName) -> [DeptItem]? {
         return collegeList?.filter({ $0.collegeName == collegeName }).first?.deptList
     }

@@ -55,19 +55,19 @@ public enum SeoulDept: DeptItem {
     public var deptName: String {
         switch self {
         case .IT_Computer:
-            return "컴퓨터학부"
+            return "서울대_컴퓨터학부"
         case .IT_Media:
-            return "글로벌미디어학부"
+            return "서울대_글로벌미디어학부"
         case .IT_Electric:
-            return "전자정보공학부"
+            return "서울대_전자정보공학부"
         case .IT_Software:
-            return "소프트웨어학부"
+            return "서울대_소프트웨어학부"
         case .IT_SmartSystem:
-            return "스마트시스템소프트웨어학과"
+            return "서울대_스마트시스템소프트웨어학과"
         case .LAW_Law:
-            return "법학과"
+            return "서울대_법학과"
         case .LAW_IntlLaw:
-            return "국제법무학과"
+            return "서울대_국제법무학과"
         case .Seoul:
             return "서울대학교 공지"
         }
