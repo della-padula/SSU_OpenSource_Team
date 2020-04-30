@@ -61,8 +61,8 @@ public class NoticeWorker {
         self.organization?.getNoticeURL(dept: item, page: page, keyword: keyword, completion: completion)
     }
     
-    public func getNoticeList() -> [Notice]? {
-        return self.organization?.getNoticeList(html: "TEST")
+    public func getNoticeList(dept: DeptItem, page: Int, html: String) -> [Notice]? {
+        return self.organization?.getNoticeList(dept: dept, page: page, html: html)
     }
     
     public func getCollegeCount() -> Int? {

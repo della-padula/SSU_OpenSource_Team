@@ -53,8 +53,12 @@ class NW_Soongsil: Organization {
         return testItems
     }
     
-    override func getNoticeList(html: String) -> [Notice]? {
-        return testFunc()
+    override func getNoticeList(dept: DeptItem, page: Int, html: String) -> [Notice]? {
+        do {
+            return try SoongsilParser(deptItem: dept).getNoticeList(page: page, html: html).get()
+        } catch (_) {
+            return nil
+        }
     }
     
     override public func getAllDeptList() -> [DeptItem]? {
@@ -79,7 +83,6 @@ class NW_Soongsil: Organization {
     }
     
     override func getNoticeURL(dept item: DeptItem, page: Int, keyword: String?, completion: @escaping (Result<URL, URLGenerateError>) -> Void) {
-//        completion(.failure(.emptyKeyword))
         if let url = URL(string: item.getURLString(page: page, keyword: keyword)) {
             completion(.success(url))
         } else {

@@ -53,7 +53,7 @@ class NW_SeoulNational: Organization {
         return testItems
     }
     
-    override func getNoticeList(html: String) -> [Notice]? {
+    override func getNoticeList(dept: DeptItem, page: Int, html: String) -> [Notice]? {
         return testFunc()
     }
     

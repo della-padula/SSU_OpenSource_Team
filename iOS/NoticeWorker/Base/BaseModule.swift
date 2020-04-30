@@ -36,7 +36,9 @@ protocol OrganizationProtocol {
 
 protocol OrganizationParserProtocol {
     
-    func getNoticeList(completion: @escaping (Result<[Notice], HTMLParseError>) -> Void)
+    init(deptItem: DeptItem)
+    
+    func getNoticeList(page: Int, html: String) -> Result<[Notice], HTMLParseError>
     
     func getAttachmentList(completion: @escaping (Result<[Attachment], HTMLParseError>) -> Void)
     
@@ -68,7 +70,7 @@ public class Organization: OrganizationProtocol {
     
     func getCollegeCount() -> Int? { return nil }
     
-    func getNoticeList(html: String) -> [Notice]? { return nil }
+    func getNoticeList(dept: DeptItem, page: Int, html: String) -> [Notice]? { return nil }
     
     func mappingCollegeDept() { }
     
@@ -93,7 +95,6 @@ public class Organization: OrganizationProtocol {
 
 public protocol DeptItem {
     func getURLString(page: Int, keyword: String?) -> String
-    
     var deptName: String { get }
 }
 
