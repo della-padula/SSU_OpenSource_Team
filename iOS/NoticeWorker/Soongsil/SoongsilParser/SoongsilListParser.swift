@@ -22,9 +22,9 @@ public class SoongsilListParser {
         case SoongsilDept.IT_SmartSystem:
             return SoongsilITParser.parseSmartSWList(page: page, html: html)
         case SoongsilDept.LAW_Law:
-            break
+            return SoongsilLawParser.parseLAWList(page: page, html: html)
         case SoongsilDept.LAW_IntlLaw:
-            break
+            return SoongsilLawParser.parseINTLAWList(page: page, html: html)
         default:
             break
         }
