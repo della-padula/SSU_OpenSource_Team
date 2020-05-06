@@ -16,4 +16,5 @@ public enum URLGenerateError: Error {
 public enum HTMLParseError: Error {
     case encoding
     case emptyContent
+    case notSupported
 }
