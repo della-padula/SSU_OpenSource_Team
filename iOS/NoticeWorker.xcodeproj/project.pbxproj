@@ -16,6 +16,7 @@
 		B01FB2BE245AF9C200B35DA8 /* SoongsilCommonParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = B01FB2BD245AF9C200B35DA8 /* SoongsilCommonParser.swift */; };
 		B02FF4F12462E9AC000D5519 /* Chungang.swift in Sources */ = {isa = PBXBuildFile; fileRef = B02FF4F02462E9AC000D5519 /* Chungang.swift */; };
 		B02FF4F32462E9D8000D5519 /* ChungandConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = B02FF4F22462E9D8000D5519 /* ChungandConstant.swift */; };
+		B02FF4F52462EA8B000D5519 /* Chungang+Mapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = B02FF4F42462EA8B000D5519 /* Chungang+Mapper.swift */; };
 		B037F682245AE7B200A8A6C7 /* Kanna in Frameworks */ = {isa = PBXBuildFile; productRef = B037F681245AE7B200A8A6C7 /* Kanna */; };
 		B037F685245AEF7C00A8A6C7 /* SoongsilITParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = B037F684245AEF7C00A8A6C7 /* SoongsilITParser.swift */; };
 		B058B3CF242EE7A2009A4682 /* NoticeWorker.h in Headers */ = {isa = PBXBuildFile; fileRef = B058B3CD242EE7A2009A4682 /* NoticeWorker.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -40,6 +41,7 @@
 		B01FB2BD245AF9C200B35DA8 /* SoongsilCommonParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoongsilCommonParser.swift; sourceTree = "<group>"; };
 		B02FF4F02462E9AC000D5519 /* Chungang.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Chungang.swift; sourceTree = "<group>"; };
 		B02FF4F22462E9D8000D5519 /* ChungandConstant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChungandConstant.swift; sourceTree = "<group>"; };
+		B02FF4F42462EA8B000D5519 /* Chungang+Mapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Chungang+Mapper.swift"; sourceTree = "<group>"; };
 		B037F684245AEF7C00A8A6C7 /* SoongsilITParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoongsilITParser.swift; sourceTree = "<group>"; };
 		B058B3CA242EE7A2009A4682 /* NoticeWorker.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = NoticeWorker.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B058B3CD242EE7A2009A4682 /* NoticeWorker.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NoticeWorker.h; sourceTree = "<group>"; };
@@ -72,6 +74,7 @@
 			children = (
 				B02FF4F02462E9AC000D5519 /* Chungang.swift */,
 				B02FF4F22462E9D8000D5519 /* ChungandConstant.swift */,
+				B02FF4F42462EA8B000D5519 /* Chungang+Mapper.swift */,
 			);
 			path = Chungang;
 			sourceTree = "<group>";
@@ -240,6 +243,7 @@
 				B0F00B84245AAC30001B2ED9 /* NoticeWorkerManager.swift in Sources */,
 				B01FB2BC245AF82200B35DA8 /* SoongsilLawParser.swift in Sources */,
 				B02FF4F12462E9AC000D5519 /* Chungang.swift in Sources */,
+				B02FF4F52462EA8B000D5519 /* Chungang+Mapper.swift in Sources */,
 				B0D03B3C24531FBD00E3EF46 /* BaseModule.swift in Sources */,
 				B004E0252453DCA500C670FD /* SoongsilConstant.swift in Sources */,
 				B037F685245AEF7C00A8A6C7 /* SoongsilITParser.swift in Sources */,
