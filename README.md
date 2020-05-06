@@ -2,8 +2,7 @@
 ## Participants
 Team Leader    : 오세환 (소프트웨어학부)  
 Team Member #1 : 이인후 (소프트웨어학부)  
-Team Member #2 : 이은진 (글로벌미디어학부)  
-Team Member #3 : 김태인 (컴퓨터학부)  
+Team Member #2 : 김태인 (컴퓨터학부)  
 
 ## Support Platform
 iOS, Android  
