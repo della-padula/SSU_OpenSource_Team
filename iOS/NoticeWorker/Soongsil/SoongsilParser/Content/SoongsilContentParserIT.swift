@@ -31,7 +31,21 @@ public class SoongsilContentParserIT: OrganizationContentParser {
     }
     
     static func parseContentMedia(html: String) -> Result<NoticeContent, HTMLParseError> {
-        return .failure(.emptyContent)
+        let contentHTML = html.css("td[class^='s_default_view_body_2']").first?.innerHTML ?? ""
+        var detailHTML = generateFilteredDetailHTML(fromHTML: contentHTML)
+        let host = "http://media.ssu.ac.kr"
+        detailHTML = detailHTML.replacingOccurrences(of: "src=\"/", with: "src=\"\(host )/")
+        
+        let mediaUrl = "http://media.ssu.ac.kr/"
+        var attachmentList = [Attachment]()
+        
+        for link in html.css("td[width^=480] a") {
+            let url = "\(mediaUrl)\(link["href"] ?? "")"
+            print("media : \(url)")
+            attachmentList.append(Attachment(fileName: link.text ?? "", fileURL: url))
+        }
+        
+        return .success(NoticeContent(content: detailHTML, attachments: attachmentList))
     }
     
     static func parseContentElectric(html: String) -> Result<NoticeContent, HTMLParseError> {
