@@ -68,15 +68,15 @@ extension SoongsilParser {
     private func parseNoticeContent(dept: DeptItem, html: String) -> Result<NoticeContent, HTMLParseError> {
         switch dept {
         case SoongsilDept.IT_Computer:
-            return .failure(.emptyContent)
+            return SoongsilContentParserIT.parseContentCSE(html: html)
         case SoongsilDept.IT_Media:
-            return .failure(.emptyContent)
+            return SoongsilContentParserIT.parseContentMedia(html: html)
         case SoongsilDept.IT_Electric:
-            return .failure(.emptyContent)
+            return SoongsilContentParserIT.parseContentElectric(html: html)
         case SoongsilDept.IT_Software:
-            return .failure(.emptyContent)
+            return SoongsilContentParserIT.parseContentSoftware(html: html)
         case SoongsilDept.IT_SmartSystem:
-            return .failure(.emptyContent)
+            return SoongsilContentParserIT.parseContentSmartSW(html: html)
         case SoongsilDept.LAW_Law:
             break
         case SoongsilDept.LAW_IntlLaw:

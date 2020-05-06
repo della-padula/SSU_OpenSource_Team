@@ -45,6 +45,19 @@ protocol OrganizationParserProtocol {
     func getNoticeContent(completion: @escaping (Result<NoticeContent, HTMLParseError>) -> Void)
 }
 
+public class OrganizationContentParser {
+    private let htmlStart = "<hml><head><meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0, shrink-to-fit=no\"><style>html,body{padding:0 5px 5px;margin:0;font-size:18px !important;}iframe,img{max-width:100%;height:auto;}</style></head><bpdy>"
+    private let htmlEnd = "</bpdy></hml>"
+    
+    func generateFilteredDetailHTML(fromHTML: String) -> String {
+        return "\(htmlStart)\(fromHTML)\(htmlEnd)"
+    }
+    
+    func generateDetailHTML(fromHTML: String) -> String {
+        return fromHTML
+    }
+}
+
 public class Organization: OrganizationProtocol {
     var collegeCodeList: [CollegeName]?
     
