@@ -11,16 +11,18 @@ import Foundation
 extension NW_SeoulNational {
     func mappingSeoulCollegeDept() {
         mappingTable = [CollegeDeptMapper]()
-        mappingTable?.append(CollegeDeptMapper(college: SeoulCollegeCode.it.rawValue,
-                                               deptList: [SeoulDept.IT_Computer(page: nil, keyword: nil),
-                                                          SeoulDept.IT_Media(page: nil, keyword: nil),
-                                                          SeoulDept.IT_Electric(page: nil, keyword: nil),
-                                                          SeoulDept.IT_Software(page: nil, keyword: nil),
-                                                          SeoulDept.IT_SmartSystem(page: nil, keyword: nil)]))
+        mappingTable?.append(CollegeDeptMapper(college: SeoulCollegeCode.eng.rawValue,
+                                               deptList: [SeoulDept.ENG_Computer(page: nil, keyword: nil)]))
         
-        mappingTable?.append(CollegeDeptMapper(college: SeoulCollegeCode.law.rawValue,
-                                               deptList: [SeoulDept.LAW_Law(page: nil, keyword: nil),
-                                                          SeoulDept.LAW_IntlLaw(page: nil, keyword: nil)]))
+        mappingTable?.append(CollegeDeptMapper(college: SeoulCollegeCode.sc.rawValue,
+                                               deptList: [SeoulDept.SC_Economics(page: nil, keyword: nil),
+                                                          SeoulDept.SC_Anthropology(page: nil, keyword: nil)]))
+        
+        mappingTable?.append(CollegeDeptMapper(college: SeoulCollegeCode.nc.rawValue,
+                                               deptList: [SeoulDept.NC_Biology(page: nil, keyword: nil)]))
+        
+        mappingTable?.append(CollegeDeptMapper(college: SeoulCollegeCode.edu.rawValue,
+                                               deptList: [SeoulDept.EDU_Math(page: nil, keyword: nil)]))
         
         mappingTable?.append(CollegeDeptMapper(college: SeoulCollegeCode.school.rawValue,
                                                deptList: [SeoulDept.Seoul(page: nil, keyword: nil)]))
