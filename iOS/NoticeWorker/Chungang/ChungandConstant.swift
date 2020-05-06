@@ -1,18 +1,16 @@
 //
-//  SeoulNationalConstant.swift
+//  ChungandConstant.swift
 //  NoticeWorker
 //
-//  Created by Denny on 2020/04/30.
+//  Created by 김태인 on 2020/05/06.
 //  Copyright © 2020 김태인. All rights reserved.
 //
 
 import Foundation
 
 public enum SeoulCollegeCode: CollegeName, CaseIterable {
-    case eng = "공과대학"
-    case sc = "사회과학대학"
-    case nc = "자연과학대학"
-    case edu = "사범대학"
+    case it = "IT대학"
+    case law = "법과대학"
     case school = "학교"
 }
 

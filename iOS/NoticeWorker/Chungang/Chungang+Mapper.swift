@@ -1,8 +1,8 @@
 //
-//  SeoulNational+Mapper.swift
+//  Chungang+Mapper.swift
 //  NoticeWorker
 //
-//  Created by Denny on 2020/04/30.
+//  Created by 김태인 on 2020/05/06.
 //  Copyright © 2020 김태인. All rights reserved.
 //
 
