@@ -15,59 +15,43 @@ public enum SeoulCollegeCode: CollegeName, CaseIterable {
 }
 
 public enum SeoulDept: DeptItem {
-    case IT_Computer(page: Int?, keyword: String?)
-    case IT_Media(page: Int?, keyword: String?)
-    case IT_Electric(page: Int?, keyword: String?)
-    case IT_Software(page: Int?, keyword: String?)
-    case IT_SmartSystem(page: Int?, keyword: String?)
-    
-    case LAW_Law(page: Int?, keyword: String?)
-    case LAW_IntlLaw(page: Int?, keyword: String?)
+    case ENG_Computer(page: Int?, keyword: String?)
+    case SC_Economics(page: Int?, keyword: String?)
+    case SC_Anthropology(page: Int?, keyword: String?)
+    case NC_Biology(page: Int?, keyword: String?)
+    case EDU_Math(page: Int?, keyword: String?)
     
     case Seoul(page: Int?, keyword: String?)
     
     public func getURLString(page: Int, keyword: String?) -> String {
         switch self {
-        case .IT_Computer(let page, let keyword):
-            return "http://cse.ssu.ac.kr/03_sub/01_sub.htm?page=\(page ?? 1)&key=\(keyword ?? "")&keyfield=subject&category=&bbs_code=Ti_BBS_1"
-        case .IT_Media(let page, let keyword):
-            return "http://media.ssu.ac.kr/sub.php?code=XxH00AXY&mode=&category=1&searchType=title&search=\(keyword ?? "")&orderType=&orderBy=&page=\(page ?? 0)"
-            
-        case .IT_Electric(let page, let keyword):
-            return "http://infocom.ssu.ac.kr/rb/?c=2/38&where=subject%7Ctag&keyword=\(keyword ?? "")&p=\(page ?? 0)"
-            
-        case .IT_Software(let page, let keyword):
-            return "https://sw.ssu.ac.kr/bbs/board.php?bo_table=sub6_1&sca=&stx=\(keyword ?? "")&sop=and&page=\(page ?? 0)"
-            
-        case .IT_SmartSystem(let page, let keyword):
-            return "http://smartsw.ssu.ac.kr/board/notice/\(page ?? 0)?search=\(keyword ?? "")"
-            
-        case .LAW_Law(let page, let keyword):
-            return "http://law.ssu.ac.kr/web/law/board1?p_p_id=EXT_BBS&p_p_lifecycle=0&p_p_state=normal&p_p_mode=view&p_p_col_id=column-1&p_p_col_count=1&_EXT_BBS_struts_action=%2Fext%2Fbbs%2Fview&_EXT_BBS_sCategory=&_EXT_BBS_sTitle=\(keyword ?? "")&_EXT_BBS_sWriter=&_EXT_BBS_sTag=&_EXT_BBS_sContent=&_EXT_BBS_sCategory2=&_EXT_BBS_sKeyType=title&_EXT_BBS_sKeyword=\(keyword ?? "")&_EXT_BBS_curPage=\(page ?? 0)"
-            
-        case .LAW_IntlLaw(let page, let keyword):
-            return "http://lawyer.ssu.ac.kr/web/lawyer/27?p_p_id=EXT_BBS&p_p_lifecycle=0&p_p_state=normal&p_p_mode=view&p_p_col_id=column-1&p_p_col_count=1&_EXT_BBS_struts_action=%2Fext%2Fbbs%2Fview&_EXT_BBS_sCategory=&_EXT_BBS_sTitle=\(keyword ?? "")&_EXT_BBS_sWriter=&_EXT_BBS_sTag=&_EXT_BBS_sContent=&_EXT_BBS_sCategory2=&_EXT_BBS_sKeyType=title&_EXT_BBS_sKeyword=\(keyword ?? "")&_EXT_BBS_curPage=\(page ?? 0)"
+        case .ENG_Computer(let page, let keyword):
+            return "https://cse.snu.ac.kr/department-notices?&keys=\(keyword ?? "")&page=\(page - 1)"
+        case .SC_Economics(let page, let keyword):
+            return "http://econ.snu.ac.kr/announcement/notice?bt=t&bq=\(keyword ?? "")&page=\(page)"
+        case .SC_Anthropology(let page, let keyword):
+            return "http://anthropology.or.kr/04_notice/notice01.htm?&s_t=1&s_key=\(keyword ?? "")&Page=\(page)"
+        case .NC_Biology(let page, let keyword):
+            return "http://biosci.snu.ac.kr/board/notice?bt=&bq=\(keyword ?? "")&page=\(page)"
+        case .EDU_Math(let page, let keyword):
+            return "http://mathed.snu.ac.kr/board/notice/page/\(page)?pmove=1&search_limit=10&search_sel=title&search_text=\(keyword ?? "")"
         case .Seoul(let page, let keyword):
-            return "https://scatch.ssu.ac.kr/%EA%B3%B5%EC%A7%80%EC%82%AC%ED%95%AD/page/\(page ?? 0)/?f=all&keyword=\(keyword ?? "")"
+            return "https://www.snu.ac.kr/snunow/notice/genernal?sc=y&df=&dt=&qt=b&q=\(keyword ?? "")&page=\(page)"
         }
     }
     
     public var deptName: String {
         switch self {
-        case .IT_Computer:
-            return "서울대_컴퓨터학부"
-        case .IT_Media:
-            return "서울대_글로벌미디어학부"
-        case .IT_Electric:
-            return "서울대_전자정보공학부"
-        case .IT_Software:
-            return "서울대_소프트웨어학부"
-        case .IT_SmartSystem:
-            return "서울대_스마트시스템소프트웨어학과"
-        case .LAW_Law:
-            return "서울대_법학과"
-        case .LAW_IntlLaw:
-            return "서울대_국제법무학과"
+        case .ENG_Computer:
+            return "컴퓨터공학부"
+        case .SC_Economics:
+            return "경제학과"
+        case .SC_Anthropology:
+            return "인류학과"
+        case .NC_Biology:
+            return "생명과학부"
+        case .EDU_Math:
+            return "수학교육과"
         case .Seoul:
             return "서울대학교 공지"
         }
