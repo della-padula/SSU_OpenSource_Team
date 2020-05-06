@@ -25,5 +25,14 @@ iteration branch : checkout iteration version branch from develop
 ## Inquirements
 Email : denny.k@kakaocorp.com
 
+## Sample Univ.
+Soongsil Univ.  
+Seoul National Univ.  
+Chungang Univ.  
+
+## Features
+Parse Notice List  
+Parse Notice Detail Content  
+
 ## LISENCE
 MIT License
