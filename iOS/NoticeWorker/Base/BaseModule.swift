@@ -40,20 +40,20 @@ protocol OrganizationParserProtocol {
     
     func getNoticeList(page: Int, html: String) -> Result<[Notice], HTMLParseError>
     
-    func getAttachmentList(completion: @escaping (Result<[Attachment], HTMLParseError>) -> Void)
+    func getAttachmentList(html: String) -> Result<[Attachment], HTMLParseError>
     
-    func getNoticeContent(completion: @escaping (Result<NoticeContent, HTMLParseError>) -> Void)
+    func getNoticeContent(html: String) -> Result<NoticeContent, HTMLParseError>
 }
 
 public class OrganizationContentParser {
-    private let htmlStart = "<hml><head><meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0, shrink-to-fit=no\"><style>html,body{padding:0 5px 5px;margin:0;font-size:18px !important;}iframe,img{max-width:100%;height:auto;}</style></head><bpdy>"
-    private let htmlEnd = "</bpdy></hml>"
+    private static let htmlStart = "<hml><head><meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0, shrink-to-fit=no\"><style>html,body{padding:0 5px 5px;margin:0;font-size:18px !important;}iframe,img{max-width:100%;height:auto;}</style></head><bpdy>"
+    private static let htmlEnd = "</bpdy></hml>"
     
-    func generateFilteredDetailHTML(fromHTML: String) -> String {
+    static func generateFilteredDetailHTML(fromHTML: String) -> String {
         return "\(htmlStart)\(fromHTML)\(htmlEnd)"
     }
     
-    func generateDetailHTML(fromHTML: String) -> String {
+    static func generateDetailHTML(fromHTML: String) -> String {
         return fromHTML
     }
 }
@@ -84,6 +84,10 @@ public class Organization: OrganizationProtocol {
     func getCollegeCount() -> Int? { return nil }
     
     func getNoticeList(dept: DeptItem, page: Int, html: String) -> [Notice]? { return nil }
+    
+    func getNoticeContent(dept: DeptItem, html: String) -> NoticeContent? { return nil }
+    
+    func getAttachmentList(dept: DeptItem, html: String) -> [Attachment]? { return nil }
     
     func mappingCollegeDept() { }
     
@@ -136,8 +140,8 @@ public struct Notice {
 }
 
 public struct NoticeContent {
-    var content: String
-    var attachments: [Attachment]
+    public var content: String
+    public var attachments: [Attachment]
 }
 
 public enum TestNoticeProperty {
@@ -199,4 +203,14 @@ public enum OrganizationCode: Int {
 public struct CollegeDeptMapper {
     var college: CollegeName
     var deptList: [DeptItem]
+}
+
+public extension String {
+    func encodeUrl() -> String? {
+        return self.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)
+    }
+    
+    func decodeUrl() -> String? {
+        return self.removingPercentEncoding
+    }
 }

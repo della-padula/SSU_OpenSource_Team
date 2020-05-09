@@ -12,5 +12,6 @@ extension NoticeWorker {
     func setOrganizationList() {
         organizationList.append(NW_Soongsil())
         organizationList.append(NW_SeoulNational())
+        organizationList.append(NW_Chungang())
     }
 }

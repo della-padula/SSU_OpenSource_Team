@@ -8,13 +8,15 @@
 
 import Foundation
 
-public enum SeoulCollegeCode: CollegeName, CaseIterable {
-    case it = "IT대학"
-    case law = "법과대학"
+public enum ChungangCollegeCode: CollegeName, CaseIterable {
+    case eng = "공과대학"
+    case sc = "사회과학대학"
+    case nc = "자연과학대학"
+    case edu = "사범대학"
     case school = "학교"
 }
 
-public enum SeoulDept: DeptItem {
+public enum ChungangDept: DeptItem {
     case ENG_Computer(page: Int?, keyword: String?)
     case SC_Economics(page: Int?, keyword: String?)
     case SC_Anthropology(page: Int?, keyword: String?)
@@ -26,7 +28,7 @@ public enum SeoulDept: DeptItem {
     public func getURLString(page: Int, keyword: String?) -> String {
         switch self {
         case .ENG_Computer(let page, let keyword):
-            return "https://cse.snu.ac.kr/department-notices?&keys=\(keyword ?? "")&page=\(page - 1)"
+            return "https://cse.snu.ac.kr/department-notices?&keys=\(keyword ?? "")&page=\((page ?? 1) - 1)"
         case .SC_Economics(let page, let keyword):
             return "http://econ.snu.ac.kr/announcement/notice?bt=t&bq=\(keyword ?? "")&page=\(page)"
         case .SC_Anthropology(let page, let keyword):
