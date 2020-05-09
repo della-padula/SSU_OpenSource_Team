@@ -64,26 +64,29 @@ extension SoongsilParser {
         return .failure(.emptyContent)
     }
     
-    // MARK: TEMP NEED TO BE REPAIRED
     private func parseNoticeContent(dept: DeptItem, html: String) -> Result<NoticeContent, HTMLParseError> {
-        switch dept {
-        case SoongsilDept.IT_Computer:
-            return SoongsilContentParserIT.parseContentCSE(html: html)
-        case SoongsilDept.IT_Media:
-            return SoongsilContentParserIT.parseContentMedia(html: html)
-        case SoongsilDept.IT_Electric:
-            return SoongsilContentParserIT.parseContentElectric(html: html)
-        case SoongsilDept.IT_Software:
-            return SoongsilContentParserIT.parseContentSoftware(html: html)
-        case SoongsilDept.IT_SmartSystem:
-            return SoongsilContentParserIT.parseContentSmartSW(html: html)
-        case SoongsilDept.LAW_Law:
-            break
-        case SoongsilDept.LAW_IntlLaw:
-            break
-        default:
-            break
+        do {
+            let doc = try HTML(html: html, encoding: .utf8)
+            switch dept {
+            case SoongsilDept.IT_Computer:
+                return SoongsilContentParserIT.parseContentCSE(html: doc)
+            case SoongsilDept.IT_Media:
+                return SoongsilContentParserIT.parseContentMedia(html: doc)
+            case SoongsilDept.IT_Electric:
+                return SoongsilContentParserIT.parseContentElectric(html: doc)
+            case SoongsilDept.IT_Software:
+                return SoongsilContentParserIT.parseContentSoftware(html: doc)
+            case SoongsilDept.IT_SmartSystem:
+                return SoongsilContentParserIT.parseContentSmartSW(html: doc)
+            case SoongsilDept.LAW_IntlLaw:
+                return SoongsilContentParserLAW.parseContentIntlLAW(html: doc)
+            case SoongsilDept.LAW_Law:
+                return SoongsilContentParserLAW.parseContentLAW(html: doc)
+            default:
+                return .failure(.notSupported)
+            }
+        } catch {
+            return .failure(.encoding)
         }
-        return .failure(.emptyContent)
     }
 }

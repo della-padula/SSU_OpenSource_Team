@@ -61,6 +61,22 @@ class NW_Soongsil: Organization {
         }
     }
     
+    override func getNoticeContent(dept: DeptItem, html: String) -> NoticeContent? {
+        do {
+            return try SoongsilParser(deptItem: dept).getNoticeContent(html: html).get()
+        } catch (_) {
+            return nil
+        }
+    }
+    
+    override func getAttachmentList(dept: DeptItem, html: String) -> [Attachment]? {
+        do {
+            return try SoongsilParser(deptItem: dept).getAttachmentList(html: html).get()
+        } catch (_) {
+            return nil
+        }
+    }
+    
     override public func getAllDeptList() -> [DeptItem]? {
         if collegeList != nil {
             var list = [DeptItem]()

@@ -85,6 +85,10 @@ public class Organization: OrganizationProtocol {
     
     func getNoticeList(dept: DeptItem, page: Int, html: String) -> [Notice]? { return nil }
     
+    func getNoticeContent(dept: DeptItem, html: String) -> NoticeContent? { return nil }
+    
+    func getAttachmentList(dept: DeptItem, html: String) -> [Attachment]? { return nil }
+    
     func mappingCollegeDept() { }
     
     func setOrganizationDept() {
