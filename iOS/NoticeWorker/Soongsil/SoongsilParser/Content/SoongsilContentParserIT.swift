@@ -7,9 +7,10 @@
 //
 
 import Foundation
+import Kanna
 
 public class SoongsilContentParserIT: OrganizationContentParser {
-    static func parseContentCSE(html: String) -> Result<NoticeContent, HTMLParseError> {
+    static func parseContentCSE(html: HTMLDocument) -> Result<NoticeContent, HTMLParseError> {
         let contentHTML = html.css("td[class=content]").first?.innerHTML ?? ""
         
         let detailHTML = generateFilteredDetailHTML(fromHTML: contentHTML)
@@ -30,7 +31,7 @@ public class SoongsilContentParserIT: OrganizationContentParser {
         return .success(NoticeContent(content: detailHTML, attachments: attachmentList))
     }
     
-    static func parseContentMedia(html: String) -> Result<NoticeContent, HTMLParseError> {
+    static func parseContentMedia(html: HTMLDocument) -> Result<NoticeContent, HTMLParseError> {
         let contentHTML = html.css("td[class^='s_default_view_body_2']").first?.innerHTML ?? ""
         var detailHTML = generateFilteredDetailHTML(fromHTML: contentHTML)
         let host = "http://media.ssu.ac.kr"
@@ -48,7 +49,7 @@ public class SoongsilContentParserIT: OrganizationContentParser {
         return .success(NoticeContent(content: detailHTML, attachments: attachmentList))
     }
     
-    static func parseContentElectric(html: String) -> Result<NoticeContent, HTMLParseError> {
+    static func parseContentElectric(html: HTMLDocument) -> Result<NoticeContent, HTMLParseError> {
         let contentHTML = html.css("div[class^='content']").first?.innerHTML ?? ""
         
         let detailHTML = generateFilteredDetailHTML(fromHTML: contentHTML)
@@ -62,7 +63,7 @@ public class SoongsilContentParserIT: OrganizationContentParser {
         return .success(NoticeContent(content: detailHTML, attachments: attachmentList))
     }
     
-    static func parseContentSoftware(html: String) -> Result<NoticeContent, HTMLParseError> {
+    static func parseContentSoftware(html: HTMLDocument) -> Result<NoticeContent, HTMLParseError> {
         let contentHTML = html.css("div[class^='bo_view_2']").first?.innerHTML ?? ""
         //        let downloadUrl = "https://sw.ssu.ac.kr/bbs/download.php?bo_table=sub6_1&wr_id=1023&no=1"
         let detailHTML = generateFilteredDetailHTML(fromHTML: contentHTML)
@@ -82,7 +83,7 @@ public class SoongsilContentParserIT: OrganizationContentParser {
         return .success(NoticeContent(content: detailHTML, attachments: attachmentList))
     }
     
-    static func parseContentSmartSW(html: String) -> Result<NoticeContent, HTMLParseError> {
+    static func parseContentSmartSW(html: HTMLDocument) -> Result<NoticeContent, HTMLParseError> {
         return .failure(.notSupported)
     }
 }
