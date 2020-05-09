@@ -140,8 +140,8 @@ public struct Notice {
 }
 
 public struct NoticeContent {
-    var content: String
-    var attachments: [Attachment]
+    public var content: String
+    public var attachments: [Attachment]
 }
 
 public enum TestNoticeProperty {
