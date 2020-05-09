@@ -61,6 +61,14 @@ public class NoticeWorker {
         self.organization?.getNoticeURL(dept: item, page: page, keyword: keyword, completion: completion)
     }
     
+    public func getNoticeContent(dept item: DeptItem, html: String) -> NoticeContent? {
+        return self.organization?.getNoticeContent(dept: item, html: html)
+    }
+    
+    public func getAttachmentList(dept item: DeptItem, html: String) -> [Attachment]? {
+        return self.organization?.getAttachmentList(dept: item, html: html)
+    }
+    
     public func getNoticeList(dept: DeptItem, page: Int, html: String) -> [Notice]? {
         return self.organization?.getNoticeList(dept: dept, page: page, html: html)
     }

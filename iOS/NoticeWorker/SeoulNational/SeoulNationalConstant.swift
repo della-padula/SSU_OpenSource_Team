@@ -28,7 +28,7 @@ public enum SeoulDept: DeptItem {
     public func getURLString(page: Int, keyword: String?) -> String {
         switch self {
         case .ENG_Computer(let page, let keyword):
-            return "https://cse.snu.ac.kr/department-notices?&keys=\(keyword ?? "")&page=\(page - 1)"
+            return "https://cse.snu.ac.kr/department-notices?&keys=\(keyword ?? "")&page=\((page ?? 1) - 1)"
         case .SC_Economics(let page, let keyword):
             return "http://econ.snu.ac.kr/announcement/notice?bt=t&bq=\(keyword ?? "")&page=\(page)"
         case .SC_Anthropology(let page, let keyword):

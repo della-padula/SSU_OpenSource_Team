@@ -96,6 +96,6 @@ class NW_Chungang: Organization {
     }
     
     override func mappingCollegeDept() {
-        self.mappingSeoulCollegeDept()
+        self.mappingChungangCollegeDept()
     }
 }

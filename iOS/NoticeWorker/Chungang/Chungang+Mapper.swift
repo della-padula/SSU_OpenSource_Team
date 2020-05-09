@@ -8,8 +8,8 @@
 
 import Foundation
 
-extension NW_SeoulNational {
-    func mappingSeoulCollegeDept() {
+extension NW_Chungang {
+    func mappingChungangCollegeDept() {
         mappingTable = [CollegeDeptMapper]()
         mappingTable?.append(CollegeDeptMapper(college: SeoulCollegeCode.eng.rawValue,
                                                deptList: [SeoulDept.ENG_Computer(page: nil, keyword: nil)]))
