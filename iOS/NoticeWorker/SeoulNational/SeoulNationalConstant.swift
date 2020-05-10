@@ -36,7 +36,7 @@ public enum SeoulDept: DeptItem {
         case .NC_Biology(let page, let keyword):
             return "http://biosci.snu.ac.kr/board/notice?bt=&bq=\(keyword ?? "")&page=\(page ?? 1)"
         case .EDU_Math(let page, let keyword):
-            return "http://mathed.snu.ac.kr/board/notice/page/\(page)?pmove=1&search_limit=10&search_sel=title&search_text=\(keyword ?? "")"
+            return "http://mathed.snu.ac.kr/board/notice/page/\(page ?? 1)?pmove=1&search_limit=10&search_sel=title&search_text=\(keyword ?? "")"
         case .Seoul(let page, let keyword):
             return "https://www.snu.ac.kr/snunow/notice/genernal?sc=y&df=&dt=&qt=b&q=\(keyword ?? "")&page=\(page ?? 1)"
         }

@@ -43,7 +43,7 @@ extension SeoulNationalParser {
         case SeoulDept.ENG_Computer:
             return SeoulNationalENGParser.parseCSEList(page: page, html: html)
         case SeoulDept.EDU_Math:
-            return .failure(.notSupported)
+            return SeoulNationalEDUParser.parseMathList(page: page, html: html)
         case SeoulDept.NC_Biology:
             return SeoulNationalNCParser.parseBiologyList(page: page, html: html)
         case SeoulDept.SC_Anthropology:

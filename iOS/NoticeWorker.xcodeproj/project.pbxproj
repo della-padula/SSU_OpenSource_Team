@@ -26,6 +26,7 @@
 		B0446FFB2467CD8B00E42EBD /* SeoulNationalParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0446FFA2467CD8B00E42EBD /* SeoulNationalParser.swift */; };
 		B0446FFD2467D08300E42EBD /* SeoulNationalSCParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0446FFC2467D08300E42EBD /* SeoulNationalSCParser.swift */; };
 		B0446FFF2467D7C500E42EBD /* SeoulNationalNCParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0446FFE2467D7C500E42EBD /* SeoulNationalNCParser.swift */; };
+		B04470012467D97000E42EBD /* SeoulNationalEDUParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = B04470002467D97000E42EBD /* SeoulNationalEDUParser.swift */; };
 		B058B3CF242EE7A2009A4682 /* NoticeWorker.h in Headers */ = {isa = PBXBuildFile; fileRef = B058B3CD242EE7A2009A4682 /* NoticeWorker.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B058B3D6242EEA1B009A4682 /* NoticeWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = B058B3D5242EEA1B009A4682 /* NoticeWorker.swift */; };
 		B0D03B382453137000E3EF46 /* NURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0D03B372453137000E3EF46 /* NURL.swift */; };
@@ -57,6 +58,7 @@
 		B0446FFA2467CD8B00E42EBD /* SeoulNationalParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeoulNationalParser.swift; sourceTree = "<group>"; };
 		B0446FFC2467D08300E42EBD /* SeoulNationalSCParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeoulNationalSCParser.swift; sourceTree = "<group>"; };
 		B0446FFE2467D7C500E42EBD /* SeoulNationalNCParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeoulNationalNCParser.swift; sourceTree = "<group>"; };
+		B04470002467D97000E42EBD /* SeoulNationalEDUParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeoulNationalEDUParser.swift; sourceTree = "<group>"; };
 		B058B3CA242EE7A2009A4682 /* NoticeWorker.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = NoticeWorker.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B058B3CD242EE7A2009A4682 /* NoticeWorker.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NoticeWorker.h; sourceTree = "<group>"; };
 		B058B3CE242EE7A2009A4682 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -153,6 +155,7 @@
 				B0446FF72467C9B800E42EBD /* SeoulNationalCommonParser.swift */,
 				B0446FFC2467D08300E42EBD /* SeoulNationalSCParser.swift */,
 				B0446FFE2467D7C500E42EBD /* SeoulNationalNCParser.swift */,
+				B04470002467D97000E42EBD /* SeoulNationalEDUParser.swift */,
 			);
 			path = List;
 			sourceTree = "<group>";
@@ -341,6 +344,7 @@
 				B0F00B89245AADBC001B2ED9 /* SeoulNationalConstant.swift in Sources */,
 				B004E0292453F3E700C670FD /* Soongsil+Mapper.swift in Sources */,
 				B0D03B3E24531FD800E3EF46 /* ResultCode.swift in Sources */,
+				B04470012467D97000E42EBD /* SeoulNationalEDUParser.swift in Sources */,
 				B01FB2BA245AF1EE00B35DA8 /* String+Extension.swift in Sources */,
 				B0446FF82467C9B800E42EBD /* SeoulNationalCommonParser.swift in Sources */,
 				B0F00B8B245AADF6001B2ED9 /* SeoulNational+Mapper.swift in Sources */,
