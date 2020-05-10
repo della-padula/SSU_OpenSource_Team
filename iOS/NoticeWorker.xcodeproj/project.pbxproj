@@ -17,10 +17,10 @@
 		B02FF4F32462E9D8000D5519 /* ChungandConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = B02FF4F22462E9D8000D5519 /* ChungandConstant.swift */; };
 		B02FF4F52462EA8B000D5519 /* Chungang+Mapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = B02FF4F42462EA8B000D5519 /* Chungang+Mapper.swift */; };
 		B02FF4F92462EB14000D5519 /* SoongsilContentParserIT.swift in Sources */ = {isa = PBXBuildFile; fileRef = B02FF4F82462EB14000D5519 /* SoongsilContentParserIT.swift */; };
-		B02FF4FB2462EB8D000D5519 /* SoongsilContentParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = B02FF4FA2462EB8D000D5519 /* SoongsilContentParser.swift */; };
 		B037F682245AE7B200A8A6C7 /* Kanna in Frameworks */ = {isa = PBXBuildFile; productRef = B037F681245AE7B200A8A6C7 /* Kanna */; };
 		B037F685245AEF7C00A8A6C7 /* SoongsilITParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = B037F684245AEF7C00A8A6C7 /* SoongsilITParser.swift */; };
 		B0446FE7246698F400E42EBD /* SoongsilContentParserLAW.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0446FE6246698F400E42EBD /* SoongsilContentParserLAW.swift */; };
+		B0446FF22467C94E00E42EBD /* SeoulNationalContentParserENG.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0446FF12467C94E00E42EBD /* SeoulNationalContentParserENG.swift */; };
 		B058B3CF242EE7A2009A4682 /* NoticeWorker.h in Headers */ = {isa = PBXBuildFile; fileRef = B058B3CD242EE7A2009A4682 /* NoticeWorker.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B058B3D6242EEA1B009A4682 /* NoticeWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = B058B3D5242EEA1B009A4682 /* NoticeWorker.swift */; };
 		B0D03B382453137000E3EF46 /* NURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0D03B372453137000E3EF46 /* NURL.swift */; };
@@ -44,9 +44,9 @@
 		B02FF4F22462E9D8000D5519 /* ChungandConstant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChungandConstant.swift; sourceTree = "<group>"; };
 		B02FF4F42462EA8B000D5519 /* Chungang+Mapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Chungang+Mapper.swift"; sourceTree = "<group>"; };
 		B02FF4F82462EB14000D5519 /* SoongsilContentParserIT.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoongsilContentParserIT.swift; sourceTree = "<group>"; };
-		B02FF4FA2462EB8D000D5519 /* SoongsilContentParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoongsilContentParser.swift; sourceTree = "<group>"; };
 		B037F684245AEF7C00A8A6C7 /* SoongsilITParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoongsilITParser.swift; sourceTree = "<group>"; };
 		B0446FE6246698F400E42EBD /* SoongsilContentParserLAW.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoongsilContentParserLAW.swift; sourceTree = "<group>"; };
+		B0446FF12467C94E00E42EBD /* SeoulNationalContentParserENG.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeoulNationalContentParserENG.swift; sourceTree = "<group>"; };
 		B058B3CA242EE7A2009A4682 /* NoticeWorker.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = NoticeWorker.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B058B3CD242EE7A2009A4682 /* NoticeWorker.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NoticeWorker.h; sourceTree = "<group>"; };
 		B058B3CE242EE7A2009A4682 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -76,6 +76,8 @@
 		B02FF4EF2462E994000D5519 /* Chungang */ = {
 			isa = PBXGroup;
 			children = (
+				B0446FEE2467C8D800E42EBD /* List */,
+				B0446FED2467C8D100E42EBD /* Content */,
 				B02FF4F02462E9AC000D5519 /* Chungang.swift */,
 				B02FF4F22462E9D8000D5519 /* ChungandConstant.swift */,
 				B02FF4F42462EA8B000D5519 /* Chungang+Mapper.swift */,
@@ -97,7 +99,6 @@
 			isa = PBXGroup;
 			children = (
 				B02FF4F82462EB14000D5519 /* SoongsilContentParserIT.swift */,
-				B02FF4FA2462EB8D000D5519 /* SoongsilContentParser.swift */,
 				B0446FE6246698F400E42EBD /* SoongsilContentParserLAW.swift */,
 			);
 			path = Content;
@@ -111,6 +112,35 @@
 				B02FF4F62462EAFA000D5519 /* List */,
 			);
 			path = SoongsilParser;
+			sourceTree = "<group>";
+		};
+		B0446FED2467C8D100E42EBD /* Content */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Content;
+			sourceTree = "<group>";
+		};
+		B0446FEE2467C8D800E42EBD /* List */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = List;
+			sourceTree = "<group>";
+		};
+		B0446FEF2467C8DF00E42EBD /* Content */ = {
+			isa = PBXGroup;
+			children = (
+				B0446FF12467C94E00E42EBD /* SeoulNationalContentParserENG.swift */,
+			);
+			path = Content;
+			sourceTree = "<group>";
+		};
+		B0446FF02467C8E300E42EBD /* List */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = List;
 			sourceTree = "<group>";
 		};
 		B058B3C0242EE7A2009A4682 = {
@@ -169,6 +199,8 @@
 		B0F00B85245AAD22001B2ED9 /* SeoulNational */ = {
 			isa = PBXGroup;
 			children = (
+				B0446FF02467C8E300E42EBD /* List */,
+				B0446FEF2467C8DF00E42EBD /* Content */,
 				B0F00B86245AAD3D001B2ED9 /* SeoulNational.swift */,
 				B0F00B88245AADBC001B2ED9 /* SeoulNationalConstant.swift */,
 				B0F00B8A245AADF6001B2ED9 /* SeoulNational+Mapper.swift */,
@@ -264,6 +296,7 @@
 			files = (
 				B0F00B84245AAC30001B2ED9 /* NoticeWorkerManager.swift in Sources */,
 				B0446FE7246698F400E42EBD /* SoongsilContentParserLAW.swift in Sources */,
+				B0446FF22467C94E00E42EBD /* SeoulNationalContentParserENG.swift in Sources */,
 				B01FB2BC245AF82200B35DA8 /* SoongsilLawParser.swift in Sources */,
 				B02FF4F12462E9AC000D5519 /* Chungang.swift in Sources */,
 				B02FF4F92462EB14000D5519 /* SoongsilContentParserIT.swift in Sources */,
@@ -280,7 +313,6 @@
 				B02FF4F32462E9D8000D5519 /* ChungandConstant.swift in Sources */,
 				B0F00B89245AADBC001B2ED9 /* SeoulNationalConstant.swift in Sources */,
 				B004E0292453F3E700C670FD /* Soongsil+Mapper.swift in Sources */,
-				B02FF4FB2462EB8D000D5519 /* SoongsilContentParser.swift in Sources */,
 				B0D03B3E24531FD800E3EF46 /* ResultCode.swift in Sources */,
 				B01FB2BA245AF1EE00B35DA8 /* String+Extension.swift in Sources */,
 				B0F00B8B245AADF6001B2ED9 /* SeoulNational+Mapper.swift in Sources */,
