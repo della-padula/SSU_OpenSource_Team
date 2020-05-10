@@ -30,15 +30,15 @@ public enum SeoulDept: DeptItem {
         case .ENG_Computer(let page, let keyword):
             return "https://cse.snu.ac.kr/department-notices?&keys=\(keyword ?? "")&page=\((page ?? 1) - 1)"
         case .SC_Economics(let page, let keyword):
-            return "http://econ.snu.ac.kr/announcement/notice?bt=t&bq=\(keyword ?? "")&page=\(page)"
+            return "http://econ.snu.ac.kr/announcement/notice?bt=t&bq=\(keyword ?? "")&page=\(page ?? 1)"
         case .SC_Anthropology(let page, let keyword):
-            return "http://anthropology.or.kr/04_notice/notice01.htm?&s_t=1&s_key=\(keyword ?? "")&Page=\(page)"
+            return "http://anthropology.or.kr/04_notice/notice01.htm?&s_t=1&s_key=\(keyword ?? "")&Page=\(page ?? 1)"
         case .NC_Biology(let page, let keyword):
-            return "http://biosci.snu.ac.kr/board/notice?bt=&bq=\(keyword ?? "")&page=\(page)"
+            return "http://biosci.snu.ac.kr/board/notice?bt=&bq=\(keyword ?? "")&page=\(page ?? 1)"
         case .EDU_Math(let page, let keyword):
             return "http://mathed.snu.ac.kr/board/notice/page/\(page)?pmove=1&search_limit=10&search_sel=title&search_text=\(keyword ?? "")"
         case .Seoul(let page, let keyword):
-            return "https://www.snu.ac.kr/snunow/notice/genernal?sc=y&df=&dt=&qt=b&q=\(keyword ?? "")&page=\(page)"
+            return "https://www.snu.ac.kr/snunow/notice/genernal?sc=y&df=&dt=&qt=b&q=\(keyword ?? "")&page=\(page ?? 1)"
         }
     }
     
