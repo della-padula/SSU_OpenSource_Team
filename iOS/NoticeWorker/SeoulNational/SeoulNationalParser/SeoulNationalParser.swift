@@ -47,7 +47,7 @@ extension SeoulNationalParser {
         case SeoulDept.NC_Biology:
             return .failure(.notSupported)
         case SeoulDept.SC_Anthropology:
-            return .failure(.notSupported)
+            return SeoulNationalSCParser.parseAnthropologyList(page: page, html: html)
         case SeoulDept.SC_Economics:
             return SeoulNationalSCParser.parseEconomicsList(page: page, html: html)
         default:

@@ -50,5 +50,53 @@ public class SeoulNationalSCParser: DeptListParser {
         }
         return .failure(.emptyContent)
     }
+    
+    static func parseAnthropologyList(page: Int, html: String) -> Result<[Notice], HTMLParseError> {
+            cleanList()
+            do {
+                let doc = try HTML(html: html, encoding: .utf8)
+                for (index, product) in doc.css("ul[class^='board_list'] li").enumerated() {
+                    if index > 0 {
+                        for div in product.css("div") {
+                            switch div.className {
+                            case "no":
+                                isNoticeList.append((div.innerHTML ?? "").contains("img"))
+                                case "title":
+                                    if let linkTag = div.css("a").first {
+                                        titleList.append(linkTag.content ?? "No Title")
+                                        
+                                        if let urlTag = linkTag["href"] {
+                                            let url = "http://anthropology.or.kr/04_notice/notice01.htm\(urlTag)"
+                                            urlList.append(url)
+                                        } else {
+                                            urlList.append("No URL")
+                                        }
+                                    }
+                                case "name":
+                                    authorList.append(div.content ?? "No Author")
+                                case "date":
+                                    dateStringList.append((div.content ?? "No Date").trimmingCharacters(in: .whitespacesAndNewlines))
+                            default:
+                                break
+                            }
+                        }
+                    }
+                }
+                
+                for (index, title) in titleList.enumerated() {
+                    var item = Notice(title: title, url: urlList[index])
+                    item.author = authorList[index]
+                    item.date = dateStringList[index]
+                    item.isActive = isNoticeList[index]
+                    print("Row [\(index)]\n\(item.date)\n\(item.title)\n\(item.url)")
+                    noticeList.append(item)
+                }
+                
+                return .success(noticeList)
+            } catch let error {
+                print("Error : \(error)")
+            }
+            return .failure(.emptyContent)
+        }
 }
 
