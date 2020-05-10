@@ -9,7 +9,7 @@
 import Foundation
 import Kanna
 
-public class SoongsilLawParser: SoongsilDeptParser {
+public class SoongsilLawParser: DeptListParser {
     static func parseLAWList(page: Int, html: String) -> Result<[Notice], HTMLParseError> {
         var index = 0
         cleanList()

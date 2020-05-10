@@ -54,7 +54,11 @@ class NW_SeoulNational: Organization {
     }
     
     override func getNoticeList(dept: DeptItem, page: Int, html: String) -> [Notice]? {
-        return testFunc()
+        do {
+            return try SeoulNationalParser(deptItem: dept).getNoticeList(page: page, html: html).get()
+        } catch (_) {
+            return nil
+        }
     }
     
     override func getCollegeCount() -> Int? {

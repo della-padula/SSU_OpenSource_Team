@@ -1,16 +1,16 @@
 //
-//  SoongsilCommonParser.swift
+//  SeoulNationalCommonParser.swift
 //  NoticeWorker
 //
-//  Created by Denny on 2020/04/30.
+//  Created by Denny on 2020/05/10.
 //  Copyright © 2020 김태인. All rights reserved.
 //
 
 import Foundation
 import Kanna
 
-public class SoongsilCommonParser: DeptListParser {
-    static func parseSoongsilList(page: Int, html: String) -> Result<[Notice], HTMLParseError> {
+public class SeoulNationalCommonParser: DeptListParser {
+    static func parseSeoulNationalList(page: Int, html: String) -> Result<[Notice], HTMLParseError> {
         var index = 0
         cleanList()
         
