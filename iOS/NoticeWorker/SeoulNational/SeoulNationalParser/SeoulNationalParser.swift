@@ -50,6 +50,8 @@ extension SeoulNationalParser {
             return SeoulNationalSCParser.parseAnthropologyList(page: page, html: html)
         case SeoulDept.SC_Economics:
             return SeoulNationalSCParser.parseEconomicsList(page: page, html: html)
+        case SeoulDept.Seoul:
+            return SeoulNationalCommonParser.parseSeoulNationalList(page: page, html: html)
         default:
             break
         }

@@ -11,43 +11,44 @@ import Kanna
 
 public class SeoulNationalCommonParser: DeptListParser {
     static func parseSeoulNationalList(page: Int, html: String) -> Result<[Notice], HTMLParseError> {
-        var index = 0
         cleanList()
         
         do {
             let doc = try HTML(html: html, encoding: .utf8)
-            var currentDate = ""
-            for item in doc.css("ul[class^='notice-lists'] li") {
-                if item.className == "start" {
-                    currentDate = ""
-                    for date in item.css("div[class^='h2 text-info font-weight-bold']") {
-                        if currentDate.isEmpty {
-                            currentDate.append((date.text ?? "").trimmingCharacters(in: .whitespacesAndNewlines))
-                        } else {
-                            currentDate.append(".\(date.text ?? "")".trimmingCharacters(in: .whitespacesAndNewlines))
+            for item in doc.css("div[class^='board-list'] tbody tr") {
+                for (index, td) in item.css("td").enumerated() {
+                    if td.className == "col-title" {
+                        if let linkTag = td.css("a").first, let url = linkTag["href"] {
+                            //                            https://www.snu.ac.kr/snunow/notice/genernal?md=v&bbsidx=127532
+                            urlList.append("https://www.snu.ac.kr\(url)")
+                            titleList.append(linkTag.css("span[class^='txt']").first?.content ?? "No Content")
                         }
+                        attachmentCheckList.append(false)
                     }
-                }
-                
-                if item.className != "notice_head" {
-                    titleList.append(item.css("span[class^='d-inline-blcok m-pt-5']").first?.text ?? "")
-                    dateStringList.append(currentDate)
-                    print(item.css("div[class^='notice_col3-lg-8'] a").first?["href"] ?? "")
-                    urlList.append(item.css("div[class^='notice_col3'] a").first?["href"] ?? "")
-                    authorList.append(item.css("div[class^='col-lg-2 m-text-right']").first?.text?.trimmingCharacters(in: .whitespacesAndNewlines) ?? "")
+                    
+                    if td.className == "col-title file" {
+                        if let linkTag = td.css("a").first, let url = linkTag["href"] {
+                            //                            https://www.snu.ac.kr/snunow/notice/genernal?md=v&bbsidx=127532
+                            urlList.append("https://www.snu.ac.kr\(url)")
+                            titleList.append(linkTag.css("span[class^='txt']").first?.content ?? "No Content")
+                        }
+                        attachmentCheckList.append(true)
+                    }
+                    
+                    if index == 1 {
+                        dateStringList.append((td.content ?? "No Date"))
+                    }
                 }
             }
             
-            index = 0
-            
-            for _ in authorList {
+            for (index, _) in titleList.enumerated() {
                 var item = Notice(title: titleList[index], url: urlList[index])
-                item.author = authorList[index]
+                item.author = ""
                 item.date = dateStringList[index]
                 item.isActive = false
+                item.custom = ["hasAttachment" : attachmentCheckList[index]]
                 
                 noticeList.append(item)
-                index += 1
             }
             return .success(noticeList)
         } catch let error {
