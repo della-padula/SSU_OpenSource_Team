@@ -5,7 +5,8 @@ Team Member #1 : 이인후 (소프트웨어학부)
 Team Member #2 : 김태인 (컴퓨터학부)  
 
 ## Support Platform
-iOS, Android  
+iOS (11.0, newer)  
+Android  
 
 ## Deployment
 iOS : Cocoapods  
