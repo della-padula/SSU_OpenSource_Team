@@ -1,4 +1,4 @@
-package com.denny.noticeworker.Base
+package project.noticeworker.base
 
 class Notice (val author: String?,
               val title: String?,

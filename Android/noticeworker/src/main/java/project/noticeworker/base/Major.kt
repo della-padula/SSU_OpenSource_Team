@@ -1,4 +1,4 @@
-package com.denny.noticeworker.Base
+package project.noticeworker.base
 
 class Major(id: Int, name: String, url: String) {
     var id: Int = id

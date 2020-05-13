@@ -1,4 +1,4 @@
-package com.denny.noticeworker.Base
+package project.noticeworker.base
 
 import kotlin.collections.ArrayList
 

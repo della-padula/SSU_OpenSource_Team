@@ -1,4 +1,4 @@
-package com.denny.noticeworker.Base
+package project.noticeworker.base
 
 class Depertment(var DeptName : String){
     val majorList = ArrayList<Major>()
