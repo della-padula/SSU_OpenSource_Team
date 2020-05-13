@@ -2,8 +2,9 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/NoticeWroker.iml" filepath="$PROJECT_DIR$/NoticeWroker.iml" group="NoticeWroker" />
-      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" group="NoticeWroker/app" />
+      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" group="demo/app" />
+      <module fileurl="file://$PROJECT_DIR$/demo.iml" filepath="$PROJECT_DIR$/demo.iml" group="demo" />
+      <module fileurl="file://$PROJECT_DIR$/noticeworker/noticeworker.iml" filepath="$PROJECT_DIR$/noticeworker/noticeworker.iml" group="demo/noticeworker" />
     </modules>
   </component>
 </project>
