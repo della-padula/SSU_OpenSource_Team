@@ -37,6 +37,10 @@
 		B0F00B87245AAD3D001B2ED9 /* SeoulNational.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0F00B86245AAD3D001B2ED9 /* SeoulNational.swift */; };
 		B0F00B89245AADBC001B2ED9 /* SeoulNationalConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0F00B88245AADBC001B2ED9 /* SeoulNationalConstant.swift */; };
 		B0F00B8B245AADF6001B2ED9 /* SeoulNational+Mapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0F00B8A245AADF6001B2ED9 /* SeoulNational+Mapper.swift */; };
+		B0FCE6E2246D778B00847E0D /* SeoulNationalContentParserSC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0FCE6E1246D778B00847E0D /* SeoulNationalContentParserSC.swift */; };
+		B0FCE6E4246D77C000847E0D /* SeoulNationalContentParserNC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0FCE6E3246D77C000847E0D /* SeoulNationalContentParserNC.swift */; };
+		B0FCE6E6246D77DC00847E0D /* SeoulNationalContenrParserEDU.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0FCE6E5246D77DC00847E0D /* SeoulNationalContenrParserEDU.swift */; };
+		B0FCE6E8246D77ED00847E0D /* SeoulNationalContentParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0FCE6E7246D77ED00847E0D /* SeoulNationalContentParser.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -71,6 +75,10 @@
 		B0F00B86245AAD3D001B2ED9 /* SeoulNational.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeoulNational.swift; sourceTree = "<group>"; };
 		B0F00B88245AADBC001B2ED9 /* SeoulNationalConstant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeoulNationalConstant.swift; sourceTree = "<group>"; };
 		B0F00B8A245AADF6001B2ED9 /* SeoulNational+Mapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SeoulNational+Mapper.swift"; sourceTree = "<group>"; };
+		B0FCE6E1246D778B00847E0D /* SeoulNationalContentParserSC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeoulNationalContentParserSC.swift; sourceTree = "<group>"; };
+		B0FCE6E3246D77C000847E0D /* SeoulNationalContentParserNC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeoulNationalContentParserNC.swift; sourceTree = "<group>"; };
+		B0FCE6E5246D77DC00847E0D /* SeoulNationalContenrParserEDU.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeoulNationalContenrParserEDU.swift; sourceTree = "<group>"; };
+		B0FCE6E7246D77ED00847E0D /* SeoulNationalContentParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeoulNationalContentParser.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -144,6 +152,10 @@
 			isa = PBXGroup;
 			children = (
 				B0446FF12467C94E00E42EBD /* SeoulNationalContentParserENG.swift */,
+				B0FCE6E1246D778B00847E0D /* SeoulNationalContentParserSC.swift */,
+				B0FCE6E3246D77C000847E0D /* SeoulNationalContentParserNC.swift */,
+				B0FCE6E5246D77DC00847E0D /* SeoulNationalContenrParserEDU.swift */,
+				B0FCE6E7246D77ED00847E0D /* SeoulNationalContentParser.swift */,
 			);
 			path = Content;
 			sourceTree = "<group>";
@@ -322,6 +334,7 @@
 			files = (
 				B0F00B84245AAC30001B2ED9 /* NoticeWorkerManager.swift in Sources */,
 				B0446FE7246698F400E42EBD /* SoongsilContentParserLAW.swift in Sources */,
+				B0FCE6E8246D77ED00847E0D /* SeoulNationalContentParser.swift in Sources */,
 				B0446FF22467C94E00E42EBD /* SeoulNationalContentParserENG.swift in Sources */,
 				B01FB2BC245AF82200B35DA8 /* SoongsilLawParser.swift in Sources */,
 				B02FF4F12462E9AC000D5519 /* Chungang.swift in Sources */,
@@ -330,6 +343,7 @@
 				B0D03B3C24531FBD00E3EF46 /* BaseModule.swift in Sources */,
 				B004E0252453DCA500C670FD /* SoongsilConstant.swift in Sources */,
 				B037F685245AEF7C00A8A6C7 /* SoongsilITParser.swift in Sources */,
+				B0FCE6E2246D778B00847E0D /* SeoulNationalContentParserSC.swift in Sources */,
 				B0D03B382453137000E3EF46 /* NURL.swift in Sources */,
 				B0446FF62467C9A500E42EBD /* SeoulNationalENGParser.swift in Sources */,
 				B0F00B87245AAD3D001B2ED9 /* SeoulNational.swift in Sources */,
@@ -338,6 +352,7 @@
 				B004E0272453DCBF00C670FD /* SoongsilParser.swift in Sources */,
 				B01FB2BE245AF9C200B35DA8 /* SoongsilCommonParser.swift in Sources */,
 				B0D03B3A24531BE800E3EF46 /* Soongsil.swift in Sources */,
+				B0FCE6E6246D77DC00847E0D /* SeoulNationalContenrParserEDU.swift in Sources */,
 				B0446FFB2467CD8B00E42EBD /* SeoulNationalParser.swift in Sources */,
 				B058B3D6242EEA1B009A4682 /* NoticeWorker.swift in Sources */,
 				B02FF4F32462E9D8000D5519 /* ChungandConstant.swift in Sources */,
@@ -345,6 +360,7 @@
 				B004E0292453F3E700C670FD /* Soongsil+Mapper.swift in Sources */,
 				B0D03B3E24531FD800E3EF46 /* ResultCode.swift in Sources */,
 				B04470012467D97000E42EBD /* SeoulNationalEDUParser.swift in Sources */,
+				B0FCE6E4246D77C000847E0D /* SeoulNationalContentParserNC.swift in Sources */,
 				B01FB2BA245AF1EE00B35DA8 /* String+Extension.swift in Sources */,
 				B0446FF82467C9B800E42EBD /* SeoulNationalCommonParser.swift in Sources */,
 				B0F00B8B245AADF6001B2ED9 /* SeoulNational+Mapper.swift in Sources */,
