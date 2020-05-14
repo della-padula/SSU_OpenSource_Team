@@ -63,15 +63,17 @@ extension SeoulNationalParser {
             let doc = try HTML(html: html, encoding: .utf8)
             switch dept {
             case SeoulDept.ENG_Computer:
-                return .failure(.notSupported)
+                return SeoulNationalContentParserENG.parseContentCSE(html: doc)
             case SeoulDept.EDU_Math:
-                return .failure(.notSupported)
+                return SeoulNationalContentParserEDU.parseContentMath(html: doc)
             case SeoulDept.NC_Biology:
-                return .failure(.notSupported)
+                return SeoulNationalContentParserNC.parseContentBiology(html: doc)
             case SeoulDept.SC_Anthropology:
-                return .failure(.notSupported)
+                return SeoulNationalContentParserSC.parseContentAnthropology(html: doc)
             case SeoulDept.SC_Economics:
-                return .failure(.notSupported)
+                return SeoulNationalContentParserSC.parseContentEconomics(html: doc)
+            case SeoulDept.Seoul:
+                return SeoulNationalContentParser.parseContentSchool(html: doc)
             default:
                 return .failure(.notSupported)
             }
