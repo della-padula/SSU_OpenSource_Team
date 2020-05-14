@@ -7,3 +7,10 @@
 //
 
 import Foundation
+import Kanna
+
+public class SeoulNationalContentParserEDU: OrganizationContentParser {
+    static func parseContentMath(html: HTMLDocument) -> Result<NoticeContent, HTMLParseError> {
+        return .failure(.notSupported)
+    }
+}
