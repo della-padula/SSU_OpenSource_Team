@@ -22,7 +22,7 @@ public class SeoulNationalContentParserSC: OrganizationContentParser {
         
         if let attachmentSection = html.css("div[class=att-file]").first {
             for attachmentItem in attachmentSection.css("li") {
-                let link = attachmentItem.css("a").first?["href"]
+                let link = "http://econ.snu.ac.kr\(attachmentItem.css("a").first?["href"] ?? "")"
                 let name = attachmentItem.css("a").first?.content
                 
                 attachmentList.append(Attachment(fileName: name, fileURL: link))
@@ -44,7 +44,7 @@ public class SeoulNationalContentParserSC: OrganizationContentParser {
         
         if let attachmentSection = html.css("div[class=attachment]").first {
             for attachmentItem in attachmentSection.css("li") {
-                let link = attachmentItem.css("a").first?["href"]
+                let link = "http://anthropology.or.kr/04_notice/notice01.htm\(attachmentItem.css("a").first?["href"] ?? "")"
                 let name = attachmentItem.css("a").first?.content
                 
                 attachmentList.append(Attachment(fileName: name, fileURL: link))
