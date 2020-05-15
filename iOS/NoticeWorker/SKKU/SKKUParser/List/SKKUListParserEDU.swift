@@ -16,13 +16,13 @@ public class SKKUListEDUParser: DeptListParser {
             let doc = try HTML(html: html, encoding: .utf8)
             for product in doc.css("div[class^='board-name-list board-wrap'] li") {
                 if let titleLink = product.css("dt[class^='board-list-content-title'] a").first {
-                    let url = titleLink["href"]
+                    let url = "https://comedu.skku.edu/comedu/notice.do\(titleLink["href"] ?? "")"
                     let title = (titleLink.content ?? "").trimmingCharacters(in: .whitespacesAndNewlines)
+                    
+                    // https://comedu.skku.edu/comedu/notice.do?mode=view&articleNo=96526&article.offset=0&articleLimit=10
                     
                     titleList.append(title)
                     urlList.append(url ?? "")
-                } else {
-                    return .failure(.emptyContent)
                 }
                 
                 for (index, contentItem) in product.css("dd[class^='board-list-content-info'] li").enumerated() {
