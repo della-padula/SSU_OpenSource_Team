@@ -27,7 +27,7 @@ class NW_SKKU: Organization {
     }
     
     override func getNoticeList(dept: DeptItem, page: Int, html: String) -> [Notice]? {
-        return testFunc()
+        
     }
     
     override func getCollegeCount() -> Int? {
