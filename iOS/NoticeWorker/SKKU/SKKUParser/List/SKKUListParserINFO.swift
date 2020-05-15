@@ -29,6 +29,8 @@ public class SKKUListINFOParser: DeptListParser {
                                 
                                 titleList.append(title)
                                 urlList.append(url ?? "NO URL")
+                            } else {
+                                return .failure(.emptyContent)
                             }
                         case 3:
                             let author = tdItem.content ?? "NO AUTHOR"

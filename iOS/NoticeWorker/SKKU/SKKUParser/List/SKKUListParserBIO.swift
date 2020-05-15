@@ -21,6 +21,8 @@ public class SKKUListBIOParser: DeptListParser {
                     
                     titleList.append(title)
                     urlList.append(url ?? "")
+                } else {
+                    return .failure(.emptyContent)
                 }
                 
                 for (index, contentItem) in product.css("dd[class^='board-list-content-info'] li").enumerated() {
