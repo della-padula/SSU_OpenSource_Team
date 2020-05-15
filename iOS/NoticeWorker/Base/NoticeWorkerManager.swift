@@ -12,6 +12,13 @@ extension NoticeWorker {
     func setOrganizationList() {
         organizationList.append(NW_Soongsil())
         organizationList.append(NW_SeoulNational())
-        organizationList.append(NW_Chungang())
+        organizationList.append(NW_SKKU())
     }
+}
+
+// Property (need to be added)
+public enum OrganizationCode: Int {
+    case Soongsil
+    case SKKU
+    case SeoulNational
 }

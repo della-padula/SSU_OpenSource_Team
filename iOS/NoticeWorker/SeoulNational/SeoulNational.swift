@@ -15,7 +15,7 @@ class NW_SeoulNational: Organization {
         self.collegeCodeList = generateCollegeList()
         self.mappingCollegeDept()
         self.setOrganizationDept()
-        self.organizationCode = .Soongsil
+        self.organizationCode = .SeoulNational
     }
     
     override func generateCollegeList() -> [CollegeName]? {

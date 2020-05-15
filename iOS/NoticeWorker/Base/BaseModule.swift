@@ -195,11 +195,6 @@ public struct Attachment {
     var fileURL       : String?
 }
 
-public enum OrganizationCode: Int {
-    case Soongsil
-    case Chungang
-}
-
 public struct CollegeDeptMapper {
     var college: CollegeName
     var deptList: [DeptItem]
