@@ -8,7 +8,7 @@
 
 import Foundation
 
-class NW_Chungang: Organization {
+class NW_SKKU: Organization {
     override init() {
         super.init()
         
@@ -24,33 +24,6 @@ class NW_Chungang: Organization {
             collegeList.append(codeCase.rawValue)
         }
         return collegeList
-    }
-    
-    func testFunc() -> [Notice] {
-        var items = [TestNotice]()
-        let noticeProperty: [TestNoticeProperty] = [.date(value: "2020-04-26"),
-                                                    .title(value: "Test Title"),
-                                                    .isActive(value: false),
-                                                    .url(value: "https://www.google.com"),
-                                                    .author(value: "TestAuthor"),
-                                                    .custom(key: "viewCount", value: 100),
-                                                    .custom(key: "isNew", value: false)]
-        
-        let item = TestNotice(property: noticeProperty)
-        items.append(item)
-        
-        let _ = noticeProperty.contains(where: ({ $0.key == TestNoticeProperty.title(value: "").key }))
-        
-        var testItems = [Notice]()
-        var testItem = Notice(title: "Test Title", url: "https://www.google.com")
-        testItem.author = "Test"
-        testItem.date = "2020-04-25"
-        testItem.isActive = true
-        testItem.custom = ["viewCount": 100]
-        testItems.append(testItem)
-        
-        let _ = testItem.custom?["viewCount"]
-        return testItems
     }
     
     override func getNoticeList(dept: DeptItem, page: Int, html: String) -> [Notice]? {

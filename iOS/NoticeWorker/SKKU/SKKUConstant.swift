@@ -9,21 +9,14 @@
 import Foundation
 
 public enum ChungangCollegeCode: CollegeName, CaseIterable {
-    case eng = "공과대학"
-    case sc = "사회과학대학"
-    case nc = "자연과학대학"
-    case edu = "사범대학"
-    case school = "학교"
+    case sub = "계열사"
 }
 
 public enum ChungangDept: DeptItem {
-    case ENG_Computer(page: Int?, keyword: String?)
-    case SC_Economics(page: Int?, keyword: String?)
-    case SC_Anthropology(page: Int?, keyword: String?)
-    case NC_Biology(page: Int?, keyword: String?)
-    case EDU_Math(page: Int?, keyword: String?)
-    
-    case Seoul(page: Int?, keyword: String?)
+    case SUB_Electronics(page: Int?, keyword: String?)
+    case SUB_Biologics(page: Int?, keyword: String?)
+    case SUB_SDS(page: Int?, keyword: String?)
+    case Samsung(page: Int?, keyword: String?)
     
     public func getURLString(page: Int, keyword: String?) -> String {
         switch self {
