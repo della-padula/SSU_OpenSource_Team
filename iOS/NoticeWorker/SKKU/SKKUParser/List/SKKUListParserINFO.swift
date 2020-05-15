@@ -1,5 +1,5 @@
 //
-//  SKKUListParserBIO.swift
+//  SKKUListParserSW.swift
 //  NoticeWorker
 //
 //  Created by 김태인 on 2020/05/15.
@@ -9,8 +9,8 @@
 import Foundation
 import Kanna
 
-public class SKKUBIOParser: DeptListParser {
-    static func parseBioMecaList(page: Int, html: String) -> Result<[Notice], HTMLParseError> {
+public class SKKUINFOParser: DeptListParser {
+    static func parseInformationList(page: Int, html: String) -> Result<[Notice], HTMLParseError> {
         return .failure(.notSupported)
     }
 }

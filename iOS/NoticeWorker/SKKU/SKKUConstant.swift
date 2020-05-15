@@ -8,14 +8,14 @@
 
 import Foundation
 
-public enum ChungangCollegeCode: CollegeName, CaseIterable {
+public enum SKKUCollegeCode: CollegeName, CaseIterable {
     case info = "정보통신대학"
     case bio = "생명과학대학"
     case edu = "사범대학"
     case skku = "학교"
 }
 
-public enum ChungangDept: DeptItem {
+public enum SKKUDept: DeptItem {
     case INFO_Information(page: Int?, keyword: String?)
     case BIO_BioMeca(page: Int?, keyword: String?)
     case EDU_Computer(page: Int?, keyword: String?)

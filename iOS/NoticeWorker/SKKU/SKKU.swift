@@ -15,19 +15,39 @@ class NW_SKKU: Organization {
         self.collegeCodeList = generateCollegeList()
         self.mappingCollegeDept()
         self.setOrganizationDept()
-        self.organizationCode = .Soongsil
+        self.organizationCode = .SKKU
     }
     
     override func generateCollegeList() -> [CollegeName]? {
         var collegeList = [CollegeName]()
-        for codeCase in SeoulCollegeCode.allCases {
+        for codeCase in SKKUCollegeCode.allCases {
             collegeList.append(codeCase.rawValue)
         }
         return collegeList
     }
     
     override func getNoticeList(dept: DeptItem, page: Int, html: String) -> [Notice]? {
-        
+        do {
+            return try SeoulNationalParser(deptItem: dept).getNoticeList(page: page, html: html).get()
+        } catch (_) {
+            return nil
+        }
+    }
+    
+    override func getNoticeContent(dept: DeptItem, html: String) -> NoticeContent? {
+        do {
+            return try SeoulNationalParser(deptItem: dept).getNoticeContent(html: html).get()
+        } catch (_) {
+            return nil
+        }
+    }
+    
+    override func getAttachmentList(dept: DeptItem, html: String) -> [Attachment]? {
+        do {
+            return try SeoulNationalParser(deptItem: dept).getAttachmentList(html: html).get()
+        } catch (_) {
+            return nil
+        }
     }
     
     override func getCollegeCount() -> Int? {
@@ -35,7 +55,7 @@ class NW_SKKU: Organization {
     }
     
     override public func getSchoolName() -> String? {
-        return "중앙대학교"
+        return "성균관대학교"
     }
     
     override func getNoticeURL(dept item: DeptItem, page: Int, keyword: String?, completion: @escaping (Result<URL, URLGenerateError>) -> Void) {
@@ -69,6 +89,6 @@ class NW_SKKU: Organization {
     }
     
     override func mappingCollegeDept() {
-        self.mappingChungangCollegeDept()
+        self.mappingSKKUCollegeDept()
     }
 }

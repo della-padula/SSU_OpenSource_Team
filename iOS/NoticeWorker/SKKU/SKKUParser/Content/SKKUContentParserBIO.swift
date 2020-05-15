@@ -7,3 +7,10 @@
 //
 
 import Foundation
+import Kanna
+
+public class SKKUContentParserBIO: OrganizationContentParser {
+    static func parseContentBioMeca(html: HTMLDocument) -> Result<NoticeContent, HTMLParseError> {
+        return .failure(.notSupported)
+    }
+}

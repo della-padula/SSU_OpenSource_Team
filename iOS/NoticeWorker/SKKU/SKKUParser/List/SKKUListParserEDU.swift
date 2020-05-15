@@ -7,3 +7,10 @@
 //
 
 import Foundation
+import Kanna
+
+public class SKKUEDUParser: DeptListParser {
+    static func parsComputerList(page: Int, html: String) -> Result<[Notice], HTMLParseError> {
+        return .failure(.notSupported)
+    }
+}

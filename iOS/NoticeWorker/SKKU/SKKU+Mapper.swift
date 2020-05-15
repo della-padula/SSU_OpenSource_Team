@@ -8,23 +8,19 @@
 
 import Foundation
 
-extension NW_Chungang {
-    func mappingChungangCollegeDept() {
+extension NW_SKKU {
+    func mappingSKKUCollegeDept() {
         mappingTable = [CollegeDeptMapper]()
-        mappingTable?.append(CollegeDeptMapper(college: SeoulCollegeCode.eng.rawValue,
-                                               deptList: [SeoulDept.ENG_Computer(page: nil, keyword: nil)]))
+        mappingTable?.append(CollegeDeptMapper(college: SKKUCollegeCode.info.rawValue,
+                                               deptList: [SKKUDept.INFO_Information(page: nil, keyword: nil)]))
         
-        mappingTable?.append(CollegeDeptMapper(college: SeoulCollegeCode.sc.rawValue,
-                                               deptList: [SeoulDept.SC_Economics(page: nil, keyword: nil),
-                                                          SeoulDept.SC_Anthropology(page: nil, keyword: nil)]))
+        mappingTable?.append(CollegeDeptMapper(college: SKKUCollegeCode.bio.rawValue,
+                                               deptList: [SKKUDept.BIO_BioMeca(page: nil, keyword: nil)]))
         
-        mappingTable?.append(CollegeDeptMapper(college: SeoulCollegeCode.nc.rawValue,
-                                               deptList: [SeoulDept.NC_Biology(page: nil, keyword: nil)]))
+        mappingTable?.append(CollegeDeptMapper(college: SKKUCollegeCode.edu.rawValue,
+                                               deptList: [SKKUDept.EDU_Computer(page: nil, keyword: nil)]))
         
-        mappingTable?.append(CollegeDeptMapper(college: SeoulCollegeCode.edu.rawValue,
-                                               deptList: [SeoulDept.EDU_Math(page: nil, keyword: nil)]))
-        
-        mappingTable?.append(CollegeDeptMapper(college: SeoulCollegeCode.school.rawValue,
-                                               deptList: [SeoulDept.Seoul(page: nil, keyword: nil)]))
+        mappingTable?.append(CollegeDeptMapper(college: SKKUCollegeCode.skku.rawValue,
+                                               deptList: [SKKUDept.SKKU(page: nil, keyword: nil)]))
     }
 }
