@@ -17,9 +17,9 @@ public class SKKUListBIOParser: DeptListParser {
             for product in doc.css("div[class^='board-name-list board-wrap'] li") {
                 if let titleLink = product.css("dt[class^='board-list-content-title'] a").first {
                     let url = titleLink["href"]
-                    let title = titleLink.content
+                    let title = (titleLink.content ?? "").trimmingCharacters(in: .whitespacesAndNewlines)
                     
-                    titleList.append(title ?? "")
+                    titleList.append(title)
                     urlList.append(url ?? "")
                 }
                 
