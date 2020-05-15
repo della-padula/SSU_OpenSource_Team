@@ -52,6 +52,5 @@ public class SKKUINFOParser: DeptListParser {
         } catch let error {
             return .failure(.encoding)
         }
-        return .failure(.emptyContent)
     }
 }
