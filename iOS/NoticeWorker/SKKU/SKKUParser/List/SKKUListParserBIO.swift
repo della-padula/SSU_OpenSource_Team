@@ -18,11 +18,9 @@ public class SKKUListBIOParser: DeptListParser {
                 if let titleLink = product.css("dt[class^='board-list-content-title'] a").first {
                     let url = titleLink["href"]
                     let title = (titleLink.content ?? "").trimmingCharacters(in: .whitespacesAndNewlines)
-                    
+                    // https://skb.skku.edu/biomecha/community/notice.do?mode=view&articleNo=40681&article.offset=10&articleLimit=10
                     titleList.append(title)
-                    urlList.append(url ?? "")
-                } else {
-                    return .failure(.emptyContent)
+                    urlList.append("https://skb.skku.edu/biomecha/community/notice.do\(url ?? "")")
                 }
                 
                 for (index, contentItem) in product.css("dd[class^='board-list-content-info'] li").enumerated() {

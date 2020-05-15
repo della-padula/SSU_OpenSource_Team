@@ -24,11 +24,11 @@ public class SKKUListINFOParser: DeptListParser {
                             break
                         case 2:
                             if let titleLink = tdItem.css("a").first {
-                                let url = titleLink["href"]
+                                let url = "http://icc.skku.ac.kr/icc_new/\(titleLink["href"] ?? "")"
                                 let title = (titleLink.content ?? "").trimmingCharacters(in: .whitespacesAndNewlines)
                                 
                                 titleList.append(title)
-                                urlList.append(url ?? "NO URL")
+                                urlList.append(url)
                             } else {
                                 return .failure(.emptyContent)
                             }
