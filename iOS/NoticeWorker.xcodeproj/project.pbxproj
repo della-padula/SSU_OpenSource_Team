@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B0036B6B246EA997003F858E /* SKKUListParserCommon.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0036B6A246EA997003F858E /* SKKUListParserCommon.swift */; };
+		B0036B6D246EAA1D003F858E /* SKKUContentParserCommon.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0036B6C246EAA1D003F858E /* SKKUContentParserCommon.swift */; };
 		B004E0252453DCA500C670FD /* SoongsilConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = B004E0242453DCA500C670FD /* SoongsilConstant.swift */; };
 		B004E0272453DCBF00C670FD /* SoongsilParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = B004E0262453DCBF00C670FD /* SoongsilParser.swift */; };
 		B004E0292453F3E700C670FD /* Soongsil+Mapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = B004E0282453F3E700C670FD /* Soongsil+Mapper.swift */; };
@@ -51,6 +53,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		B0036B6A246EA997003F858E /* SKKUListParserCommon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SKKUListParserCommon.swift; sourceTree = "<group>"; };
+		B0036B6C246EAA1D003F858E /* SKKUContentParserCommon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SKKUContentParserCommon.swift; sourceTree = "<group>"; };
 		B004E0242453DCA500C670FD /* SoongsilConstant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoongsilConstant.swift; sourceTree = "<group>"; };
 		B004E0262453DCBF00C670FD /* SoongsilParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoongsilParser.swift; sourceTree = "<group>"; };
 		B004E0282453F3E700C670FD /* Soongsil+Mapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Soongsil+Mapper.swift"; sourceTree = "<group>"; };
@@ -226,6 +230,7 @@
 				B09198C1246E9DA5004C8ABA /* SKKUListParserINFO.swift */,
 				B09198C3246E9DB2004C8ABA /* SKKUListParserBIO.swift */,
 				B09198C5246E9DC8004C8ABA /* SKKUListParserEDU.swift */,
+				B0036B6A246EA997003F858E /* SKKUListParserCommon.swift */,
 			);
 			path = List;
 			sourceTree = "<group>";
@@ -236,6 +241,7 @@
 				B09198C8246E9DE5004C8ABA /* SKKUContentParserINFO.swift */,
 				B09198CA246E9DF0004C8ABA /* SKKUContentParserBIO.swift */,
 				B09198CC246E9DF9004C8ABA /* SKKUContentParserEDU.swift */,
+				B0036B6C246EAA1D003F858E /* SKKUContentParserCommon.swift */,
 			);
 			path = Content;
 			sourceTree = "<group>";
@@ -382,8 +388,10 @@
 				B0446FFD2467D08300E42EBD /* SeoulNationalSCParser.swift in Sources */,
 				B004E0272453DCBF00C670FD /* SoongsilParser.swift in Sources */,
 				B01FB2BE245AF9C200B35DA8 /* SoongsilCommonParser.swift in Sources */,
+				B0036B6B246EA997003F858E /* SKKUListParserCommon.swift in Sources */,
 				B0D03B3A24531BE800E3EF46 /* Soongsil.swift in Sources */,
 				B0FCE6E6246D77DC00847E0D /* SeoulNationalContenrParserEDU.swift in Sources */,
+				B0036B6D246EAA1D003F858E /* SKKUContentParserCommon.swift in Sources */,
 				B0446FFB2467CD8B00E42EBD /* SeoulNationalParser.swift in Sources */,
 				B058B3D6242EEA1B009A4682 /* NoticeWorker.swift in Sources */,
 				B02FF4F32462E9D8000D5519 /* SKKUConstant.swift in Sources */,

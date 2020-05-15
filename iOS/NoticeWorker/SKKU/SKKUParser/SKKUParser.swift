@@ -41,11 +41,11 @@ extension SKKUParser {
     private func parseNoticeList(dept: DeptItem, page: Int, html: String) -> Result<[Notice], HTMLParseError> {
         switch dept {
         case SKKUDept.INFO_Information:
-            return SeoulNationalENGParser.parseCSEList(page: page, html: html)
+            return SKKUListINFOParser.parseInformationList(page: page, html: html)
         case SKKUDept.BIO_BioMeca:
-            return SeoulNationalEDUParser.parseMathList(page: page, html: html)
+            return SKKUListBIOParser.parseBioMecaList(page: page, html: html)
         case SKKUDept.EDU_Computer:
-            return SeoulNationalNCParser.parseBiologyList(page: page, html: html)
+            return SKKUListEDUParser.parseComputerList(page: page, html: html)
         case SKKUDept.SKKU:
             return SeoulNationalCommonParser.parseSeoulNationalList(page: page, html: html)
         default:

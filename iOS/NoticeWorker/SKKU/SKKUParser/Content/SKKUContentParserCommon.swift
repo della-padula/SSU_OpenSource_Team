@@ -1,5 +1,5 @@
 //
-//  SKKUListParserEDU.swift
+//  SKKUContentParserCommon.swift
 //  NoticeWorker
 //
 //  Created by 김태인 on 2020/05/15.
@@ -9,8 +9,8 @@
 import Foundation
 import Kanna
 
-public class SKKUListEDUParser: DeptListParser {
-    static func parseComputerList(page: Int, html: String) -> Result<[Notice], HTMLParseError> {
+public class SKKUContentParserCommon: OrganizationContentParser {
+    static func parseContentSKKU(html: HTMLDocument) -> Result<NoticeContent, HTMLParseError> {
         return .failure(.notSupported)
     }
 }
