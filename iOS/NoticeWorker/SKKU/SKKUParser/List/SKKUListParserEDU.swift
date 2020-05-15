@@ -11,6 +11,7 @@ import Kanna
 
 public class SKKUListEDUParser: DeptListParser {
     static func parseComputerList(page: Int, html: String) -> Result<[Notice], HTMLParseError> {
+        
         return .failure(.notSupported)
     }
 }

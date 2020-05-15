@@ -47,7 +47,7 @@ extension SKKUParser {
         case SKKUDept.EDU_Computer:
             return SKKUListEDUParser.parseComputerList(page: page, html: html)
         case SKKUDept.SKKU:
-            return SeoulNationalCommonParser.parseSeoulNationalList(page: page, html: html)
+            return SKKUListParserCommon.parseSKKUList(page: page, html: html)
         default:
             break
         }
@@ -59,13 +59,13 @@ extension SKKUParser {
             let doc = try HTML(html: html, encoding: .utf8)
             switch dept {
             case SKKUDept.INFO_Information:
-                return SeoulNationalContentParserNC.parseContentBiology(html: doc)
+                return SKKUContentParserINFO.parseContentInformation(html: doc)
             case SKKUDept.BIO_BioMeca:
-                return SeoulNationalContentParserSC.parseContentAnthropology(html: doc)
+                return SKKUContentParserBIO.parseContentBioMeca(html: doc)
             case SKKUDept.EDU_Computer:
-                return SeoulNationalContentParserSC.parseContentEconomics(html: doc)
+                return SKKUContentParserEDU.parseContentComputer(html: doc)
             case SKKUDept.SKKU:
-                return SeoulNationalContentParser.parseContentSchool(html: doc)
+                return SKKUContentParserCommon.parseContentSKKU(html: doc)
             default:
                 return .failure(.notSupported)
             }
