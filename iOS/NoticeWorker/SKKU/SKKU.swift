@@ -28,7 +28,7 @@ class NW_SKKU: Organization {
     
     override func getNoticeList(dept: DeptItem, page: Int, html: String) -> [Notice]? {
         do {
-            return try SeoulNationalParser(deptItem: dept).getNoticeList(page: page, html: html).get()
+            return try SKKUParser(deptItem: dept).getNoticeList(page: page, html: html).get()
         } catch (_) {
             return nil
         }
@@ -36,7 +36,7 @@ class NW_SKKU: Organization {
     
     override func getNoticeContent(dept: DeptItem, html: String) -> NoticeContent? {
         do {
-            return try SeoulNationalParser(deptItem: dept).getNoticeContent(html: html).get()
+            return try SKKUParser(deptItem: dept).getNoticeContent(html: html).get()
         } catch (_) {
             return nil
         }
@@ -44,7 +44,7 @@ class NW_SKKU: Organization {
     
     override func getAttachmentList(dept: DeptItem, html: String) -> [Attachment]? {
         do {
-            return try SeoulNationalParser(deptItem: dept).getAttachmentList(html: html).get()
+            return try SKKUParser(deptItem: dept).getAttachmentList(html: html).get()
         } catch (_) {
             return nil
         }

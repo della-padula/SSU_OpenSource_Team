@@ -14,30 +14,34 @@ public class SKKUListINFOParser: DeptListParser {
         cleanList()
         do {
             let doc = try HTML(html: html, encoding: .utf8)
-            for (index, product) in doc.css("div[class^='list-table-div'] tbody td").enumerated() {
-                switch index % 6 {
-                case 0:
-                    break
-                case 1:
-                    break
-                case 2:
-                    if let titleLink = product.css("a").first {
-                        let url = titleLink["href"]
-                        let title = titleLink.content
-                        
-                        titleList.append(title ?? "")
-                        urlList.append(url ?? "")
+            for (index, product) in doc.css("div[class^='list-table-div'] tr").enumerated() {
+                if index > 0 {
+                    for (index, tdItem) in product.css("td").enumerated() {
+                        switch index % 6 {
+                        case 0:
+                            break
+                        case 1:
+                            break
+                        case 2:
+                            if let titleLink = tdItem.css("a").first {
+                                let url = titleLink["href"]
+                                let title = (titleLink.content ?? "").trimmingCharacters(in: .whitespacesAndNewlines)
+                                
+                                titleList.append(title)
+                                urlList.append(url ?? "NO URL")
+                            }
+                        case 3:
+                            let author = tdItem.content ?? "NO AUTHOR"
+                            authorList.append(author.trimmingCharacters(in: .whitespacesAndNewlines))
+                        case 4:
+                            let date = tdItem.content ?? "NO DATE"
+                            dateStringList.append(date.trimmingCharacters(in: .whitespacesAndNewlines))
+                        case 5:
+                            break
+                        default:
+                            break
+                        }
                     }
-                case 3:
-                    let author = product.content ?? ""
-                    authorList.append(author)
-                case 4:
-                    let date = product.content ?? ""
-                    dateStringList.append(date)
-                case 5:
-                    break
-                default:
-                    break
                 }
             }
             
