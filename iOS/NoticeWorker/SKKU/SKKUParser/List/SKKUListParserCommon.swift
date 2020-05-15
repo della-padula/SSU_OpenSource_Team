@@ -24,11 +24,13 @@ public class SKKUListParserCommon: DeptListParser {
                     case 1:
                         // Title
                         if let titleLink = td.css("a").first {
-                            let url = titleLink["href"]
+                            let url = "https://www.skku.edu/skku/campus/skk_comm/notice01.do\(titleLink["href"] ?? "")"
                             let title = (titleLink.content ?? "").trimmingCharacters(in: .whitespacesAndNewlines)
                             
+                            // https://www.skku.edu/skku/campus/skk_comm/notice01.do?mode=view&articleNo=78609&article.offset=0&articleLimit=10
+                            
                             titleList.append(title)
-                            urlList.append(url ?? "")
+                            urlList.append(url)
                         } else {
                             return .failure(.emptyContent)
                         }
