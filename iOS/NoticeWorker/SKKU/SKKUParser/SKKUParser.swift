@@ -7,7 +7,6 @@
 //
 
 import Foundation
-import Kanna
 
 public class SKKUParser: OrganizationParserProtocol {
     public var deptItem: DeptItem

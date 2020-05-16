@@ -7,7 +7,6 @@
 //
 
 import Foundation
-import Kanna
 
 public class SKKUListBIOParser: DeptListParser {
     static func parseBioMecaList(page: Int, html: String) -> Result<[Notice], HTMLParseError> {

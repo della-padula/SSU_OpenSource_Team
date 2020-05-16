@@ -7,7 +7,6 @@
 //
 
 import Foundation
-import Kanna
 
 public class SeoulNationalCommonParser: DeptListParser {
     static func parseSeoulNationalList(page: Int, html: String) -> Result<[Notice], HTMLParseError> {

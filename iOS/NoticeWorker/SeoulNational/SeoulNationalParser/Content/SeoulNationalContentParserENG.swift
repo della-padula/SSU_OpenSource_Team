@@ -7,7 +7,6 @@
 //
 
 import Foundation
-import Kanna
 
 public class SeoulNationalContentParserENG: OrganizationContentParser {
     static func parseContentCSE(html: HTMLDocument) -> Result<NoticeContent, HTMLParseError> {

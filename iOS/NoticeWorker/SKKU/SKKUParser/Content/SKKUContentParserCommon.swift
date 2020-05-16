@@ -7,7 +7,6 @@
 //
 
 import Foundation
-import Kanna
 
 public class SKKUContentParserCommon: OrganizationContentParser {
     static func parseContentSKKU(html: HTMLDocument) -> Result<NoticeContent, HTMLParseError> {

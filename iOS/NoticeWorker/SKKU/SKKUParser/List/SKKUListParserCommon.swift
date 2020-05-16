@@ -7,7 +7,6 @@
 //
 
 import Foundation
-import Kanna
 
 public class SKKUListParserCommon: DeptListParser {
     static func parseSKKUList(page: Int, html: String) -> Result<[Notice], HTMLParseError> {

@@ -7,7 +7,6 @@
 //
 
 import Foundation
-import Kanna
 
 public class SoongsilITParser: DeptListParser {
     static func parseCSEList(page: Int, html: String) -> Result<[Notice], HTMLParseError> {

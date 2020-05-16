@@ -7,7 +7,6 @@
 //
 
 import Foundation
-import Kanna
 
 public class SoongsilLawParser: DeptListParser {
     static func parseLAWList(page: Int, html: String) -> Result<[Notice], HTMLParseError> {

@@ -7,7 +7,6 @@
 //
 
 import Foundation
-import Kanna
 
 public class SeoulNationalParser: OrganizationParserProtocol {
     public var deptItem: DeptItem
