@@ -13,7 +13,7 @@ iOS : Cocoapods
 Android: Gradle (Jitpack), Maven  
 
 ## Cocoapods
-GitHub Deployment Repo URL : https://github.com/della-padula/NoticeWorker
+GitHub Deployment Repo URL : https://github.com/della-padula/NoticeWorker  
 Cocoapods URL : https://cocoapods.org/pods/NoticeWorker  
 NoticeWorker (0.1.0)  
 May 16th, 20:39  
