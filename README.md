@@ -12,6 +12,11 @@ Android
 iOS : Cocoapods  
 Android: Gradle (Jitpack), Maven  
 
+## Cocoapods
+https://cocoapods.org/pods/NoticeWorker  
+NoticeWorker (0.0.1)  
+May 16th, 20:26  
+
 ## Git Flow
 (iteration/(year)/(version) - develop - feature/(name)  
 iteration branch : checkout iteration version branch from develop  
