@@ -9,20 +9,22 @@
 Pod::Spec.new do |spec|
 
   spec.name         = "NoticeWorker"
-  spec.version      = "0.3.5"
+  spec.version      = "0.7.0"
   spec.summary      = "Notice Parser for Mobile Platform"
-  spec.description  = "We provide URL constants and parsing modules that can provide school notices."
+  spec.description  = <<-DESC
+We provide URL constants and parsing modules that can provide school notices."
+	 	      DESC
 
   spec.homepage     = "https://github.com/della-padula/NoticeWorker"
   spec.license      = { :type => "MIT", :file => "LICENSE" }
-  spec.author             = { "Taein Kim" => "della.kimko@gmail.com" }
+  spec.author             = { 'Taein Kim' => 'della.kimko@gmail.com' }
 
   spec.platform     = :ios
-  spec.ios.deployment_target = "11.0"
+  spec.ios.deployment_target = '8.0'
 
-  spec.source       = { :git => "https://github.com/della-padula/NoticeWorker.git", :tag => "#{spec.version}" }
+  spec.source       = { :git => "https://github.com/della-padula/NoticeWorker.git", :tag => spec.version.to_s }
 
-  spec.source_files  = "NoticeWorker"
-  spec.swift_version = "5.1"
+  spec.source_files  = "NoticeWorker/**/**/**/*.swift"
+  spec.swift_version = '5.1'
 
 end
