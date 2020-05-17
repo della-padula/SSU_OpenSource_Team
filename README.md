@@ -12,11 +12,18 @@ Android
 iOS : Cocoapods  
 Android: Gradle (Jitpack), Maven  
 
-## Cocoapods
+## iOS Deployment Cocoapods
 GitHub Deployment Repo URL : https://github.com/della-padula/NoticeWorker  
 Cocoapods URL : https://cocoapods.org/pods/NoticeWorker  
-NoticeWorker (0.1.0)  
-May 16th, 20:39  
+  
+[![Version](https://img.shields.io/badge/version-v0.7.0-green.svg?style=flat)](https://cocoapods.org/pods/NoticeWorker)
+[![Version](https://img.shields.io/badge/ios-11.0-blue.svg?style=flat)](https://cocoapods.org/pods/NoticeWorker)
+[![Version](https://img.shields.io/cocoapods/v/NoticeWorker.svg?style=flat)](https://cocoapods.org/pods/NoticeWorker)
+[![License](https://img.shields.io/cocoapods/l/NoticeWorker.svg?style=flat)](https://cocoapods.org/pods/NoticeWorker)
+[![Platform](https://img.shields.io/cocoapods/p/NoticeWorker.svg?style=flat)](https://cocoapods.org/pods/NoticeWorker)  
+
+NoticeWorker (0.7.0)  
+May 17th, 14:31  
 
 ## Git Flow
 (iteration/(year)/(version) - develop - feature/(name)  
