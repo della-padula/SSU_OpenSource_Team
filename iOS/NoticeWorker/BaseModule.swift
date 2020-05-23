@@ -136,6 +136,10 @@ public struct College {
     public var collegeName: String?
 }
 
+// Notice
+// Author : Taein Kim
+// Description : 공지 사항 모델이다. custom의 경우 사용자가 커스텀하여 속성을 구성할 수 있다.
+
 public struct Notice {
     public var title: String
     public var url: String
