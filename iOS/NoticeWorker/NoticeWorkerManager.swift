@@ -8,6 +8,11 @@
 
 import Foundation
 
+// Notice Worker Extension
+// Author : Taein Kim
+// Description : 새로운 학교가 추가될 경우 여기에도 추가를 해주어야 한다.
+// 여기에 추가되지 않으면 학교 목록에서 학교 정보를 가져올 수 없으며 추가되지 않은 학교 데이터는 사용할 수 없다.
+
 extension NoticeWorker {
     func setOrganizationList() {
         organizationList.append(NW_Soongsil())
