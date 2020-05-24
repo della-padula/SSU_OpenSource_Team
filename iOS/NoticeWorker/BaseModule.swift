@@ -136,11 +136,6 @@ public struct College {
     public var collegeName: String?
 }
 
-// MARK: Notice
-public struct TestNotice {
-    public var property: [TestNoticeProperty]
-}
-
 public struct Notice {
     public var title: String
     public var url: String
@@ -159,51 +154,6 @@ public struct NoticeContent {
     public var content: String
     public var attachments: [Attachment]
 }
-
-public enum TestNoticeProperty {
-    case title(value: String)
-    case url(value: String)
-    case date(value: String?)
-    case author(value: String?)
-    case isActive(value: Bool?)
-    case custom(key: String, value: Any?)
-    
-    var key: String {
-        switch self {
-        case .title:
-            return "title"
-        case .url:
-            return "url"
-        case .date:
-            return "date"
-        case .author:
-            return "author"
-        case .isActive:
-            return "isActive"
-        case .custom(let key, _):
-            return key
-        }
-    }
-    
-    public var value: Any? {
-        switch self {
-        case .title(let value):
-            return value
-        case .url(let value):
-            return value
-        case .date(let value):
-            return value
-        case .author(let value):
-            return value
-        case .isActive(let value):
-            return value
-        case .custom(_, let value):
-            return value
-        }
-    }
-    
-}
-
 
 // MARK: Attachment
 public struct Attachment {
