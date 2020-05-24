@@ -176,6 +176,11 @@ public extension String {
     }
 }
 
+// DeptListParser
+// Author : Taein Kim
+// Description : 공지사항 리스트를 파싱하기 위해 사용되는 리스트입니다.
+// 최종적으로는 Notice List를 사용하지만 이를 구성하기위해 Author, Title, pageString, dateString, url, isNotice 등이 사용됩니다.
+
 public class DeptListParser {
     static var noticeList = [Notice]()
     static var authorList = [String]()
@@ -198,6 +203,7 @@ public class DeptListParser {
     }
 }
 
+// 숫자인지 확인하기 위한 extension 계산 프로퍼티
 extension String  {
     var isNumber: Bool {
         return !isEmpty && rangeOfCharacter(from: CharacterSet.decimalDigits.inverted) == nil
