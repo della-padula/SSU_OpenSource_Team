@@ -22,6 +22,9 @@ extension NoticeWorker {
 }
 
 // Property (need to be added)
+// Author : Taein Kim
+// Description : 이 부분도 마찬가지로 새로운 학교가 추가되면 위와 마찬가지로 추가되어야 한다.
+
 public enum OrganizationCode: Int {
     case Soongsil
     case SKKU
