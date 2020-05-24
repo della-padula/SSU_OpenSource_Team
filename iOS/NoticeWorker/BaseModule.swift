@@ -45,6 +45,10 @@ protocol OrganizationParserProtocol {
     func getNoticeContent(html: String) -> Result<NoticeContent, HTMLParseError>
 }
 
+// Organization Content Parser
+// Author : Taein Kim
+// Description : To make HTML Content fit to device (various screen size)
+
 public class OrganizationContentParser {
     private static let htmlStart = "<hml><head><meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0, shrink-to-fit=no\"><style>html,body{padding:0 5px 5px;margin:0;font-size:18px !important;}iframe,img{max-width:100%;height:auto;}</style></head><bpdy>"
     private static let htmlEnd = "</bpdy></hml>"
@@ -57,6 +61,10 @@ public class OrganizationContentParser {
         return fromHTML
     }
 }
+
+// OrganizationProtocol
+// Author : Taein Kim
+// Description : To supply the Base Organization Method for new Custom Organization Classes.
 
 public class Organization: OrganizationProtocol {
     var collegeCodeList: [CollegeName]?
