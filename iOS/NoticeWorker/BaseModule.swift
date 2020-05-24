@@ -118,10 +118,18 @@ public class Organization: OrganizationProtocol {
     }
 }
 
+// DeptItem
+// Author : Taein Kim
+// Description : DeptItem has Two Properties (URL Info, Name of Dept.)
+
 public protocol DeptItem {
     func getURLString(page: Int, keyword: String?) -> String
     var deptName: String { get }
 }
+
+// College
+// Author : Taein Kim
+// Description : College has various Dept. Items and College has name.
 
 public struct College {
     public var deptList: [DeptItem]?
