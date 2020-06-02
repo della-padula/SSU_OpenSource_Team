@@ -41,7 +41,7 @@ Email : denny.k@kakaocorp.com
 ## Sample Univ.
 Soongsil Univ.  
 Seoul National Univ.  
-Chungang Univ.  
+Sungkyunkwan Univ.  
 
 ## Features
 Parse Notice List  
