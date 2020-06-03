@@ -27,6 +27,7 @@ May 17th, 14:31
 
 ## Android Deployment Jitpack
 GitHub Deployment Repo URL : https://github.com/SeHwanOh/OpenSource_Android
+
 JitPack URL : https://jitpack.io/#SeHwanOh/OpenSource_Android
 
 [![Version](https://img.shields.io/badge/version-v1.0.2-green.svg?style=flat)](https://jitpack.io/#SeHwanOh/OpenSource_Android)
