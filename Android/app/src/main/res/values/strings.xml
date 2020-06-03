@@ -1,3 +1,4 @@
 <resources>
-    <string name="app_name">NoticeWroker</string>
+    <string name="app_name">demo</string>
+    <string name="noti_string">공지</string>
 </resources>
