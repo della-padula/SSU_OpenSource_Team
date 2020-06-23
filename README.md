@@ -25,6 +25,20 @@ Cocoapods URL : https://cocoapods.org/pods/NoticeWorker
 NoticeWorker (0.7.0)  
 May 17th, 14:31  
 
+## Android Deployment Jitpack
+GitHub Deployment Repo URL : https://github.com/SeHwanOh/OpenSource_Android
+
+JitPack URL : https://jitpack.io/#SeHwanOh/OpenSource_Android
+
+[![Version](https://img.shields.io/badge/version-v1.0.2-green.svg?style=flat)](https://jitpack.io/#SeHwanOh/OpenSource_Android)
+[![Version](https://img.shields.io/badge/Android-11.0-blue.svg?style=flat)](https://jitpack.io/#SeHwanOh/OpenSource_Android)
+[![Version](https://jitpack.io/v/SeHwanOh/OpenSource_Android.svg?style=flat)](https://jitpack.io/#SeHwanOh/OpenSource_Android)
+[![License](https://img.shields.io/cocoapods/l/NoticeWorker.svg?style=flat)](https://jitpack.io/#SeHwanOh/OpenSource_Android)
+[![Platform](https://img.shields.io/badge/Platform-Android-orange.svg?style=flat)](https://jitpack.io/#SeHwanOh/OpenSource_Android)
+
+NoticeWorker (1.0.2)
+June 3rd, 17:58
+
 ## Git Flow
 (iteration/(year)/(version) - develop - feature/(name)  
 iteration branch : checkout iteration version branch from develop  

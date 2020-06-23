@@ -6,7 +6,7 @@ import project.noticeworker.base.Major
 import project.noticeworker.base.Notice
 import java.net.URLEncoder
 
-class Software : Major("소프트웨어학부", "School of Software") {
+class SSU_Software : Major("소프트웨어학부", "School of Software") {
     override fun getURL(page: Int, keyword: String?): String {
         val noticeUrl = "https://sw.ssu.ac.kr/bbs/board.php?bo_table=sub6_1&page=$page"
         val resultURL: String
@@ -64,7 +64,6 @@ class Software : Major("소프트웨어학부", "School of Software") {
             noticeList.add(noticeItem)
             index += 1
         }
-        Log.d("Test", noticeList.size.toString())
         return noticeList
     }
 }

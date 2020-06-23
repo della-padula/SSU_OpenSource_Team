@@ -1,15 +1,32 @@
 package project.noticeworker
 
-import project.noticeworker.soongsil.SSU
+import project.noticeworker.base.Major
+import project.noticeworker.base.Organization
+import project.noticeworker.seoulnational.SeoulNational
+import project.noticeworker.soongsil.Soongsil
 
 object NoticeWorker {
-    val instance: NoticeWorker = NoticeWorker
+    private val Organizations : ArrayList<in Organization> = ArrayList(
+        listOf(
+          Soongsil(), SeoulNational()
+        ))
 
-    //val SSU : SSU = SSU()
-    //val CNU : CNU = CNU()
-    //val SNU : SNU = SNU()
+    fun define(str : String) : Organization{
+        when(str) {
+            "숭실대학교"-> {
+                return NoticeWorker.Organizations[0] as Soongsil
+            }
+            "서울대학교"-> {
+                return NoticeWorker.Organizations[1] as SeoulNational
+            }
+        }
+        return Organization("Error")
+    }
 
-
+    fun getOrganizationList() : List<String>{
+        val tmp = Organizations as ArrayList<Organization>
+        return tmp.map{ t -> t.name }
+    }
 }
 
 

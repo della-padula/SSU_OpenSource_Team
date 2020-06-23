@@ -1,7 +1,6 @@
 package project.demo
 
 import android.os.Bundle
-import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -10,16 +9,11 @@ import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
-import org.jsoup.Jsoup
-import project.noticeworker.base.Major
 import project.noticeworker.base.Notice
-import project.noticeworker.soongsil.SSU
+
+
 
 class NotiActivity : AppCompatActivity() {
-    var majorNumber = 0
-    var deptNumber = 0
-    var nextPage = 1
-    var keyword = ""
     private var isLast: Boolean = false
     private var result: ArrayList<Notice> = ArrayList()
     private var notiList: ArrayList<Notice> = ArrayList()
@@ -37,26 +31,11 @@ class NotiActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_major_noti)
-
-        deptNumber = intent.getIntExtra("dept", 0)
-        majorNumber = intent.getIntExtra("major", 0)
-
-        val tmp = SSU.Depertments[deptNumber].majorList[majorNumber] as Major
-        val url = tmp.getURL(1,"")
-        Log.d("Test", url)
-
+        result = intent.getParcelableArrayListExtra<Notice>("list")
         CoroutineScope(Dispatchers.Main).launch {
             // Show progress from UI thread
             withContext(CoroutineScope(Dispatchers.Default).coroutineContext) {
                 // background thread
-                try{
-                val html = Jsoup.connect(url).get().html()
-                    result =  tmp.parse(html)
-                }catch(ex : Exception){
-                    Log.e("ERROR","io")
-                }
-
-                Log.d("Test", result.size.toString())
             }
             update()
         }
