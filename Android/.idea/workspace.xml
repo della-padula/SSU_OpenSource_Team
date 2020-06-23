@@ -6,6 +6,7 @@
     </shared>
   </component>
   <component name="AndroidLogFilters">
+    <option name="TOOL_WINDOW_CUSTOM_FILTER" value="test" />
     <option name="TOOL_WINDOW_LOG_LEVEL" value="debug" />
     <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="Show only selected application" />
   </component>
@@ -24,7 +25,6 @@
       <change afterPath="$PROJECT_DIR$/app/src/main/res/values/colors.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" afterDir="false" />
     </list>
-    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -56,6 +56,12 @@
   </component>
   <component name="ProjectId" id="1cWmgZ2MV26oKdOZg3PkzBIfV4o" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="flattenPackages" value="true" />
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
   <component name="PropertiesComponent">
     <property name="DeviceAndSnapshotComboBoxAction.selectedDevice" value="R39M303FSEX" />
     <property name="DeviceAndSnapshotComboBoxAction.selectionTime" value="2020-05-30T12:13:13.549Z" />
@@ -63,24 +69,12 @@
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.17" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
+    <property name="settings.editor.selected.configurable" value="preferences.updates" />
   </component>
   <component name="RecentsManager">
     <key name="CopyKotlinDeclarationDialog.RECENTS_KEY">
       <recent name="project.noticeworker.soongsil.soongsilParser" />
     </key>
-  </component>
-  <component name="RunDashboard">
-    <option name="ruleStates">
-      <list>
-        <RuleState>
-          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
-        </RuleState>
-        <RuleState>
-          <option name="name" value="StatusDashboardGroupingRule" />
-        </RuleState>
-      </list>
-    </option>
   </component>
   <component name="RunManager">
     <configuration default="true" type="AndroidJUnit" factoryName="Android JUnit">
@@ -172,5 +166,31 @@
     <ignored-roots>
       <path value="$PROJECT_DIR$/.." />
     </ignored-roots>
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="415" y="183" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1592122424425">
+      <screen x="0" y="0" width="1368" height="872" />
+    </state>
+    <state x="415" y="183" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1368.872@0.0.1368.872" timestamp="1592122424425" />
+    <state x="465" y="192" key="FileChooserDialogImpl" timestamp="1592554387488">
+      <screen x="0" y="0" width="1368" height="872" />
+    </state>
+    <state x="465" y="192" key="FileChooserDialogImpl/0.0.1368.872@0.0.1368.872" timestamp="1592554387488" />
+    <state width="949" height="85" key="GridCell.Tab.0.bottom" timestamp="1592894885450">
+      <screen x="0" y="0" width="1368" height="872" />
+    </state>
+    <state width="949" height="85" key="GridCell.Tab.0.bottom/0.0.1368.872@0.0.1368.872" timestamp="1592894885450" />
+    <state width="949" height="85" key="GridCell.Tab.0.center" timestamp="1592894885450">
+      <screen x="0" y="0" width="1368" height="872" />
+    </state>
+    <state width="949" height="85" key="GridCell.Tab.0.center/0.0.1368.872@0.0.1368.872" timestamp="1592894885450" />
+    <state width="949" height="85" key="GridCell.Tab.0.left" timestamp="1592894885450">
+      <screen x="0" y="0" width="1368" height="872" />
+    </state>
+    <state width="949" height="85" key="GridCell.Tab.0.left/0.0.1368.872@0.0.1368.872" timestamp="1592894885450" />
+    <state width="949" height="85" key="GridCell.Tab.0.right" timestamp="1592894885450">
+      <screen x="0" y="0" width="1368" height="872" />
+    </state>
+    <state width="949" height="85" key="GridCell.Tab.0.right/0.0.1368.872@0.0.1368.872" timestamp="1592894885450" />
   </component>
 </project>

@@ -5,7 +5,7 @@ import project.noticeworker.base.Major
 import project.noticeworker.base.Notice
 import java.net.URLEncoder
 
-class Electric : Major("전자정보공학부", "School of Electronic Engineering") {
+class SSU_Electric : Major("전자정보공학부", "School of Electronic Engineering") {
     override fun getURL(page: Int, keyword: String?): String {
         val noticeUrl = "http://infocom.ssu.ac.kr/rb/?c=2/38&p=$page"
         val resultURL: String
